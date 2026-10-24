@@ -3,73 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SK Elegance | Fashion Store</title>
+  <title>SK Elegance | Women's Fashion</title>
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, sans-serif;
       background: #fffaf7;
-      color: #222;
+      color: #292323;
     }
 
     header {
-      background: #171717;
+      background: #201820;
       color: white;
       padding: 20px 6%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 15px;
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 27px;
       font-weight: bold;
       letter-spacing: 2px;
     }
 
     .logo span {
-      color: #e7b77b;
+      color: #e6bb8b;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
       font-size: 14px;
     }
 
     nav a:hover {
-      color: #e7b77b;
+      color: #e6bb8b;
     }
 
     .hero {
-      min-height: 390px;
-      padding: 70px 8%;
+      min-height: 400px;
+      padding: 65px 8%;
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.08)),
-        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85");
-      background-position: center;
-      background-size: cover;
       color: white;
+      background:
+        linear-gradient(90deg, rgba(24, 15, 23, .8), rgba(24, 15, 23, .15)),
+        url("2.jpeg") center 25% / cover no-repeat;
     }
 
     .hero-content {
-      max-width: 500px;
+      max-width: 470px;
     }
 
     .hero h1 {
-      font-size: clamp(36px, 6vw, 60px);
-      margin-bottom: 15px;
+      font-size: clamp(38px, 6vw, 60px);
+      margin-bottom: 16px;
     }
 
     .hero p {
@@ -79,19 +82,19 @@
     }
 
     .btn {
-      display: inline-block;
       border: none;
-      background: #d6a56e;
-      color: #171717;
+      display: inline-block;
       padding: 13px 22px;
+      border-radius: 4px;
+      background: #e6bb8b;
+      color: #201820;
       text-decoration: none;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 4px;
     }
 
     .btn:hover {
-      background: #f0c99b;
+      opacity: .85;
     }
 
     section {
@@ -100,114 +103,112 @@
 
     .section-title {
       text-align: center;
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 12px;
     }
 
-    .section-subtitle {
+    .subtitle {
       text-align: center;
       color: #777;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .filters {
       display: flex;
       justify-content: center;
       gap: 10px;
-      flex-wrap: wrap;
       margin-bottom: 30px;
     }
 
     .filter-btn {
-      padding: 10px 18px;
-      border: 1px solid #222;
+      border: 1px solid #302630;
       background: white;
-      cursor: pointer;
+      padding: 11px 20px;
       border-radius: 4px;
+      cursor: pointer;
     }
 
     .filter-btn.active,
     .filter-btn:hover {
-      background: #222;
+      background: #302630;
       color: white;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(2, minmax(0, 320px));
+      justify-content: center;
+      gap: 28px;
     }
 
     .product-card {
       background: white;
-      border: 1px solid #eee;
-      border-radius: 7px;
+      border: 1px solid #eee3dc;
+      border-radius: 8px;
       overflow: hidden;
-      transition: transform .2s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, .05);
     }
 
     .product-card img {
       width: 100%;
-      height: 260px;
+      height: 420px;
       object-fit: cover;
+      object-position: top center;
       display: block;
-      background: #f0eeee;
+      background: #f3e9e5;
     }
 
     .product-info {
-      padding: 15px;
+      padding: 18px;
     }
 
-    .category-label {
-      color: #9a7047;
+    .category {
       font-size: 12px;
+      color: #997044;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .product-info h3 {
-      font-size: 16px;
-      margin: 8px 0;
+      margin: 9px 0;
+      font-size: 18px;
     }
 
     .price {
-      font-size: 19px;
+      font-size: 23px;
       font-weight: bold;
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
     .sizes {
       width: 100%;
-      padding: 9px;
-      margin: 5px 0 12px;
+      padding: 11px;
       border: 1px solid #ddd;
+      margin: 8px 0 14px;
       background: white;
     }
 
     .add-btn {
       width: 100%;
-      padding: 11px;
-      background: #222;
-      color: white;
+      padding: 13px;
       border: none;
-      cursor: pointer;
       border-radius: 4px;
+      background: #302630;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     .add-btn:hover {
-      background: #9a7047;
+      background: #997044;
     }
 
     .cart {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 25px;
+      max-width: 750px;
+      margin: auto;
       background: white;
-      border: 1px solid #eee;
+      padding: 25px;
+      border: 1px solid #eee3dc;
       border-radius: 8px;
     }
 
@@ -216,39 +217,39 @@
       justify-content: space-between;
       align-items: center;
       gap: 12px;
+      padding: 15px 0;
       border-bottom: 1px solid #eee;
-      padding: 13px 0;
     }
 
     .remove-btn {
-      background: #f3e4d6;
+      padding: 8px 11px;
+      background: #f2e5df;
       border: none;
-      padding: 7px 10px;
-      cursor: pointer;
       border-radius: 4px;
+      cursor: pointer;
     }
 
     .cart-total {
       text-align: right;
-      font-size: 22px;
+      font-size: 23px;
       font-weight: bold;
-      margin: 20px 0;
+      margin: 22px 0;
     }
 
     .cart-actions {
       display: flex;
-      gap: 10px;
       justify-content: flex-end;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .whatsapp-btn {
-      background: #168b49;
+      background: #168c4b;
       color: white;
     }
 
     .about {
-      background: #f4e8dc;
+      background: #f3e8df;
       text-align: center;
       line-height: 1.8;
     }
@@ -259,67 +260,42 @@
     }
 
     footer {
-      background: #171717;
+      background: #201820;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 25px 15px;
       line-height: 1.8;
     }
 
-    footer a {
-      color: #e7b77b;
-    }
-
-    @media (max-width: 1000px) {
-      .products {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 700px) {
+    @media (max-width: 650px) {
       header {
         justify-content: center;
         text-align: center;
       }
 
-      nav a {
-        margin: 0 7px;
+      nav {
+        justify-content: center;
       }
 
-      .products {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .product-card img {
-        height: 190px;
-      }
-
-      .product-info {
-        padding: 10px;
-      }
-
-      .product-info h3 {
-        font-size: 14px;
+      .hero {
+        min-height: 330px;
+        padding: 40px 6%;
       }
 
       section {
         padding: 35px 4%;
       }
 
-      .hero {
-        min-height: 340px;
-        padding: 45px 6%;
-      }
-    }
-
-    @media (max-width: 360px) {
       .products {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 400px);
       }
 
       .product-card img {
-        height: 280px;
+        height: 400px;
+      }
+
+      .cart {
+        padding: 16px;
       }
     }
   </style>
@@ -333,41 +309,39 @@
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
+      <a href="#shop">Shop Dresses</a>
       <a href="#about">About</a>
-      <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
+      <a href="#cart">Shopping Bag (<span id="cart-count">0</span>)</a>
     </nav>
   </header>
 
   <!-- HOME BANNER -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Style That Defines You</h1>
+      <h1>Elegance in Every Thread</h1>
       <p>
-        Discover beautiful tops and elegant women's fashion
-        at SK Elegance. Find your style, wear your confidence.
+        Discover beautiful embroidered outfits designed
+        to make every occasion special.
       </p>
       <a href="#shop" class="btn">SHOP COLLECTION</a>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
+  <!-- TWO DRESSES ONLY -->
   <section id="shop">
-    <h2 class="section-title">Our Collection</h2>
-    <p class="section-subtitle">
-      Explore our latest fashion collection.
+    <h2 class="section-title">Our Dress Collection</h2>
+    <p class="subtitle">
+      Beautiful styles, one elegant price.
     </p>
 
     <div class="filters">
-      <button class="filter-btn active" onclick="filterProducts('All', this)">
-        All Products
+      <button class="filter-btn active"
+        onclick="filterProducts('All', this)">
+        All Dresses
       </button>
 
-      <button class="filter-btn" onclick="filterProducts('Girls Tops', this)">
-        Girls' Tops
-      </button>
-
-      <button class="filter-btn" onclick="filterProducts('Womens Wear', this)">
+      <button class="filter-btn"
+        onclick="filterProducts('Womens Wear', this)">
         Women's Wear
       </button>
     </div>
@@ -378,11 +352,11 @@
   <!-- SHOPPING BAG -->
   <section id="cart">
     <h2 class="section-title">Your Shopping Bag</h2>
-    <p class="section-subtitle">Review your selected products.</p>
+    <p class="subtitle">Review your selected dresses.</p>
 
     <div class="cart">
       <div id="cart-items">
-        <p>Your shopping bag is empty.</p>
+        Your shopping bag is empty.
       </div>
 
       <div class="cart-total">
@@ -401,15 +375,19 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT BRAND -->
   <section class="about" id="about">
     <h2 class="section-title">About SK Elegance</h2>
+
     <p>
-      SK Elegance is a fashion brand focused on stylish tops
-      and women's wear. Our goal is to bring you fashionable
-      looks at prices you can enjoy.
+      Welcome to SK Elegance, your destination for elegant
+      women's fashion and beautiful embroidered outfits.
     </p>
-    <p>Thank you for choosing SK Elegance!</p>
+
+    <p>
+      Our collection features two special dress designs,
+      each priced at ₹1,200.
+    </p>
   </section>
 
   <!-- FOOTER -->
@@ -420,107 +398,23 @@
   </footer>
 
   <script>
-    // 12 PRODUCTS: 6 GIRLS' TOPS + 6 WOMEN'S WEAR
-
+    // ONLY TWO DRESSES
     const products = [
-      // GIRLS' TOPS - 6 PRODUCTS
       {
         id: 1,
-        name: "Classic White Top",
-        category: "Girls Tops",
-        price: 399,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80"
+        name: "Elegant Purple Embroidered Dress",
+        category: "Womens Wear",
+        price: 1200,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        image: "2.jpeg"
       },
       {
         id: 2,
-        name: "Black Casual Top",
-        category: "Girls Tops",
-        price: 449,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1564257577-0a3d1b1a5a9f?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 3,
-        name: "Pink Fashion Top",
-        category: "Girls Tops",
-        price: 499,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 4,
-        name: "Floral Summer Top",
-        category: "Girls Tops",
-        price: 549,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 5,
-        name: "Blue Denim Style Top",
-        category: "Girls Tops",
-        price: 599,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1548624149-f0a9c2b8e5c4?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 6,
-        name: "Trendy Beige Top",
-        category: "Girls Tops",
-        price: 449,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80"
-      },
-
-      // WOMEN'S WEAR - 6 PRODUCTS
-      {
-        id: 7,
-        name: "Elegant Women's Dress",
+        name: "Pink Embroidered Dress",
         category: "Womens Wear",
-        price: 999,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 8,
-        name: "Women's Casual Outfit",
-        category: "Womens Wear",
-        price: 899,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 9,
-        name: "Floral Women's Dress",
-        category: "Womens Wear",
-        price: 1199,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 10,
-        name: "Elegant Party Wear",
-        category: "Womens Wear",
-        price: 1499,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 11,
-        name: "Women's Casual Shirt",
-        category: "Womens Wear",
-        price: 799,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 12,
-        name: "Premium Women's Outfit",
-        category: "Womens Wear",
-        price: 1299,
-        sizes: ["S", "M", "L", "XL"],
-        image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80"
+        price: 1200,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        image: "1.jpeg"
       }
     ];
 
@@ -530,23 +424,22 @@
     function displayProducts(category = "All") {
       const container = document.getElementById("products");
 
-      const filteredProducts = category === "All"
+      const filtered = category === "All"
         ? products
-        : products.filter(product => product.category === category);
+        : products.filter(p => p.category === category);
 
-      container.innerHTML = filteredProducts.map(product => `
+      container.innerHTML = filtered.map(product => `
         <div class="product-card">
           <img
             src="${product.image}"
             alt="${product.name}"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='https://placehold.co/500x600/f4e8dc/333?text=SK+Elegance';"
+            onerror="this.onerror=null;this.src='https://placehold.co/500x650/f3e8df/302630?text=SK+Elegance';"
           >
 
           <div class="product-info">
-            <span class="category-label">${product.category}</span>
+            <span class="category">Women's Wear</span>
             <h3>${product.name}</h3>
-            <p class="price">₹${product.price}</p>
+            <p class="price">₹${product.price.toLocaleString("en-IN")}</p>
 
             <label for="size-${product.id}">Choose size:</label>
 
@@ -556,7 +449,8 @@
               ).join("")}
             </select>
 
-            <button class="add-btn" onclick="addToCart(${product.id})">
+            <button class="add-btn"
+              onclick="addToCart(${product.id})">
               Add to Bag
             </button>
           </div>
@@ -564,7 +458,7 @@
       `).join("");
     }
 
-    // FILTER PRODUCTS
+    // FILTER
     function filterProducts(category, button) {
       displayProducts(category);
 
@@ -575,17 +469,19 @@
       button.classList.add("active");
     }
 
-    // ADD PRODUCT TO BAG
+    // ADD TO BAG
     function addToCart(productId) {
-      const product = products.find(item => item.id === productId);
-      const size = document.getElementById(`size-${productId}`).value;
+      const product = products.find(p => p.id === productId);
+      const size = document.getElementById(
+        `size-${productId}`
+      ).value;
 
-      const existingItem = cart.find(item =>
+      const existing = cart.find(item =>
         item.id === productId && item.size === size
       );
 
-      if (existingItem) {
-        existingItem.quantity += 1;
+      if (existing) {
+        existing.quantity++;
       } else {
         cart.push({
           ...product,
@@ -595,37 +491,37 @@
       }
 
       updateCart();
-      alert(product.name + " added to your shopping bag!");
+      alert(product.name + " added to your bag!");
     }
 
-    // UPDATE BAG
+    // UPDATE BAG AND TOTAL
     function updateCart() {
-      const cartItems = document.getElementById("cart-items");
-      const cartCount = document.getElementById("cart-count");
-      const cartTotal = document.getElementById("cart-total");
+      const itemsElement = document.getElementById("cart-items");
 
-      const totalQuantity = cart.reduce(
+      const count = cart.reduce(
         (sum, item) => sum + item.quantity, 0
       );
 
-      const totalPrice = cart.reduce(
+      const total = cart.reduce(
         (sum, item) => sum + item.price * item.quantity, 0
       );
 
-      cartCount.textContent = totalQuantity;
-      cartTotal.textContent = totalPrice;
+      document.getElementById("cart-count").textContent = count;
+      document.getElementById("cart-total").textContent =
+        total.toLocaleString("en-IN");
 
       if (cart.length === 0) {
-        cartItems.innerHTML = "<p>Your shopping bag is empty.</p>";
+        itemsElement.innerHTML = "<p>Your shopping bag is empty.</p>";
         return;
       }
 
-      cartItems.innerHTML = cart.map((item, index) => `
+      itemsElement.innerHTML = cart.map((item, index) => `
         <div class="cart-item">
           <div>
             <strong>${item.name}</strong>
-            <p>Size: ${item.size} | Quantity: ${item.quantity}</p>
-            <p>₹${item.price * item.quantity}</p>
+            <p>Size: ${item.size}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <p>₹${(item.price * item.quantity).toLocaleString("en-IN")}</p>
           </div>
 
           <button class="remove-btn" onclick="removeItem(${index})">
@@ -635,7 +531,7 @@
       `).join("");
     }
 
-    // REMOVE ONE BAG ITEM
+    // REMOVE ITEM
     function removeItem(index) {
       cart.splice(index, 1);
       updateCart();
@@ -648,7 +544,7 @@
         return;
       }
 
-      if (confirm("Do you want to clear your shopping bag?")) {
+      if (confirm("Clear all items from your shopping bag?")) {
         cart = [];
         updateCart();
       }
@@ -657,34 +553,34 @@
     // WHATSAPP ORDER
     function orderWhatsApp() {
       if (cart.length === 0) {
-        alert("Please add products to your bag first.");
+        alert("Please add a dress to your bag first.");
         return;
       }
 
-      const orderDetails = cart.map(item =>
-        `${item.name} | Size: ${item.size} | Qty: ${item.quantity} | ₹${item.price * item.quantity}`
-      ).join("\n");
+      const details = cart.map(item =>
+        `${item.name}\nSize: ${item.size}\nQuantity: ${item.quantity}\nPrice: ₹${item.price * item.quantity}`
+      ).join("\n\n");
 
-      const totalPrice = cart.reduce(
+      const total = cart.reduce(
         (sum, item) => sum + item.price * item.quantity, 0
       );
 
       const message =
-        `Hello SK Elegance! I want to place an order:\n\n` +
-        `${orderDetails}\n\nTotal: ₹${totalPrice}`;
+        `Hello SK Elegance! I would like to order:\n\n` +
+        `${details}\n\nTotal: ₹${total}`;
 
-      // REPLACE THIS NUMBER WITH YOUR OWN WHATSAPP NUMBER.
-      // Include country code, without + or spaces.
+      // CHANGE THIS TO YOUR WHATSAPP NUMBER.
+      // Use country code, without + or spaces.
       const whatsappNumber = "917093001723";
 
-      const whatsappURL =
+      const url =
         "https://wa.me/" + whatsappNumber +
         "?text=" + encodeURIComponent(message);
 
-      window.open(whatsappURL, "_blank");
+      window.open(url, "_blank");
     }
 
-    // LOAD PRODUCTS WHEN PAGE OPENS
+    // INITIALIZE WEBSITE
     displayProducts();
     updateCart();
   </script>
