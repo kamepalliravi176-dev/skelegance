@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" aria-label="Pink embroidered original dress" role="img">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#f9d0d9"/>
+      <stop offset="1" stop-color="#d7396e"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8e0ba"/>
+      <stop offset="1" stop-color="#dba750"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#f7efe8"/>
+  <path d="M180 170 L240 185 L260 760 L135 880 L110 800 L170 200 Z" fill="#d5a58d" opacity="0.28"/>
+  <path d="M195 150 C260 120, 280 170, 300 210 L350 790 L250 860 L165 800 Z" fill="#f7e5d8" opacity="0.5"/>
+  <g>
+    <path d="M300 230 L390 165 L500 230 L550 820 L250 820 Z" fill="url(#g1)"/>
+    <path d="M340 225 L372 170 L410 225 L420 815 L360 815 Z" fill="#f7d2d4" opacity="0.3"/>
+    <path d="M260 280 C365 335, 445 330, 540 280" stroke="#f5d8b3" stroke-width="10" fill="none" opacity=".9"/>
+    <path d="M290 335 C335 402, 348 520, 295 620" stroke="#f5d8b3" stroke-width="8" fill="none" opacity=".85"/>
+    <path d="M510 335 C465 402, 452 520, 505 620" stroke="#f5d8b3" stroke-width="8" fill="none" opacity=".85"/>
+    <path d="M270 450 Q398 420 530 452" stroke="#f5d8b3" stroke-width="7" fill="none" opacity=".7"/>
+    <path d="M255 600 Q395 575 545 600" stroke="#f5d8b3" stroke-width="7" fill="none" opacity=".7"/>
+    <path d="M255 660 Q390 640 545 660" stroke="#f5d8b3" stroke-width="7" fill="none" opacity=".7"/>
+    <path d="M375 135 L390 210 L405 135 L430 205 Q390 215 350 205 Z" fill="#fdedd1" opacity="0.7"/>
+  </g>
+  <g fill="url(#g2)" opacity="0.9">
+    <circle cx="315" cy="295" r="9"/><circle cx="362" cy="330" r="8"/><circle cx="430" cy="330" r="8"/><circle cx="478" cy="295" r="9"/>
+    <circle cx="332" cy="430" r="8"/><circle cx="450" cy="430" r="8"/><circle cx="330" cy="530" r="8"/><circle cx="460" cy="530" r="8"/>
+    <circle cx="355" cy="635" r="8"/><circle cx="435" cy="635" r="8"/>
+  </g>
+  <path d="M310 230 L340 210 L378 250 L350 270 L315 250 Z" fill="#f0d6ae" opacity="0.75"/>
+  <path d="M470 230 L500 210 L538 250 L510 270 L475 250 Z" fill="#f0d6ae" opacity="0.75"/>
+  <path d="M230 820 L570 820 L607 910 L190 910 Z" fill="#e8c7aa" opacity="0.35"/>
+</svg>

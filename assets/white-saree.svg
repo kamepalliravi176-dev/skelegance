@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="White saree with maroon border">
+  <defs>
+    <linearGradient id="bg8" x1="0" x2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f5efe6"/>
+    </linearGradient>
+    <linearGradient id="saree8" x1="0" x2="1">
+      <stop offset="0" stop-color="#f9f4ef"/>
+      <stop offset="1" stop-color="#f1e5d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg8)"/>
+  <path d="M200 180 Q400 150 600 180 L600 840 L200 840 Z" fill="url(#saree8)"/>
+  <path d="M220 220 L580 220" stroke="#a91e3b" stroke-width="18"/>
+  <path d="M220 320 L580 320" stroke="#e5d7bf" stroke-width="10"/>
+  <path d="M220 420 L580 420" stroke="#e5d7bf" stroke-width="10"/>
+  <path d="M220 520 L580 520" stroke="#e5d7bf" stroke-width="10"/>
+  <path d="M220 620 L580 620" stroke="#e5d7bf" stroke-width="10"/>
+  <path d="M220 720 L580 720" stroke="#e5d7bf" stroke-width="10"/>
+  <g fill="#d0a970" opacity="0.8">
+    <circle cx="260" cy="260" r="12"/><circle cx="350" cy="260" r="12"/><circle cx="440" cy="260" r="12"/><circle cx="530" cy="260" r="12"/>
+    <circle cx="260" cy="360" r="12"/><circle cx="350" cy="360" r="12"/><circle cx="440" cy="360" r="12"/><circle cx="530" cy="360" r="12"/>
+    <circle cx="260" cy="460" r="12"/><circle cx="350" cy="460" r="12"/><circle cx="440" cy="460" r="12"/><circle cx="530" cy="460" r="12"/>
+    <circle cx="260" cy="560" r="12"/><circle cx="350" cy="560" r="12"/><circle cx="440" cy="560" r="12"/><circle cx="530" cy="560" r="12"/>
+  </g>
+  <path d="M220 200 L580 200" stroke="#9c122d" stroke-width="14"/>
+</svg>

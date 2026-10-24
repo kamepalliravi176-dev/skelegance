@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" aria-label="Purple embroidered original dress" role="img">
+  <defs>
+    <linearGradient id="p1" x1="0" x2="1">
+      <stop offset="0" stop-color="#cbb9d4"/>
+      <stop offset="1" stop-color="#6c4d86"/>
+    </linearGradient>
+    <linearGradient id="p2" x1="0" x2="1">
+      <stop offset="0" stop-color="#f3dfae"/>
+      <stop offset="1" stop-color="#d5a75e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#f0ebf4"/>
+  <path d="M280 225 L390 165 L507 220 L560 830 L235 830 Z" fill="url(#p1)"/>
+  <path d="M330 235 L392 182 L450 228 L455 820 L355 820 Z" fill="#f0d8ec" opacity="0.25"/>
+  <path d="M270 305 C360 345, 452 345, 530 305" stroke="#f1e1ba" stroke-width="10" fill="none"/>
+  <path d="M280 370 C335 430, 345 540, 295 650" stroke="#f1e1ba" stroke-width="8" fill="none"/>
+  <path d="M520 370 C465 430, 455 540, 505 650" stroke="#f1e1ba" stroke-width="8" fill="none"/>
+  <path d="M262 470 Q400 445 538 480" stroke="#f1e1ba" stroke-width="7" fill="none" opacity="0.8"/>
+  <path d="M250 610 Q402 590 550 610" stroke="#f1e1ba" stroke-width="7" fill="none" opacity="0.8"/>
+  <path d="M255 680 Q398 665 545 680" stroke="#f1e1ba" stroke-width="7" fill="none" opacity="0.8"/>
+  <g fill="url(#p2)" opacity="0.9">
+    <circle cx="320" cy="300" r="8"/><circle cx="366" cy="338" r="8"/><circle cx="434" cy="338" r="8"/><circle cx="478" cy="300" r="8"/>
+    <circle cx="338" cy="440" r="8"/><circle cx="462" cy="440" r="8"/><circle cx="338" cy="538" r="8"/><circle cx="462" cy="538" r="8"/>
+    <circle cx="360" cy="642" r="8"/><circle cx="441" cy="642" r="8"/>
+  </g>
+  <path d="M300 215 L345 195 L392 244 L355 268 L310 238 Z" fill="#f3e4c5" opacity="0.75"/>
+  <path d="M480 215 L525 195 L572 244 L535 268 L490 238 Z" fill="#f3e4c5" opacity="0.75"/>
+  <path d="M300 830 L500 830 L560 920 L245 920 Z" fill="#d9b788" opacity="0.32"/>
+</svg>

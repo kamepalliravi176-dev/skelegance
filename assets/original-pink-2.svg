@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" aria-label="Pink original festive dress" role="img">
+  <defs>
+    <linearGradient id="m1" x1="0" x2="1">
+      <stop offset="0" stop-color="#ea7aa4"/>
+      <stop offset="1" stop-color="#b52d5d"/>
+    </linearGradient>
+    <linearGradient id="m2" x1="0" x2="1">
+      <stop offset="0" stop-color="#f0de9a"/>
+      <stop offset="1" stop-color="#d29b52"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#f9f0ef"/>
+  <path d="M270 228 L392 165 L512 228 L555 820 L242 820 Z" fill="url(#m1)"/>
+  <path d="M310 238 L390 190 L463 240 L468 820 L342 820 Z" fill="#f7d2d9" opacity="0.25"/>
+  <path d="M270 300 C350 335, 460 335, 535 300" stroke="#f3dfb2" stroke-width="10" fill="none"/>
+  <path d="M282 360 C332 430, 345 540, 300 648" stroke="#f3dfb2" stroke-width="8" fill="none"/>
+  <path d="M520 360 C468 430, 455 540, 500 648" stroke="#f3dfb2" stroke-width="8" fill="none"/>
+  <g fill="url(#m2)" opacity="0.92">
+    <circle cx="318" cy="300" r="9"/><circle cx="365" cy="342" r="8"/><circle cx="430" cy="340" r="8"/><circle cx="478" cy="300" r="9"/>
+    <circle cx="336" cy="440" r="8"/><circle cx="458" cy="440" r="8"/><circle cx="338" cy="539" r="8"/><circle cx="462" cy="539" r="8"/>
+    <circle cx="364" cy="640" r="8"/><circle cx="436" cy="640" r="8"/>
+  </g>
+  <path d="M252 470 Q402 445 548 470" stroke="#f3dfb2" stroke-width="7" fill="none" opacity="0.75"/>
+  <path d="M260 610 Q398 592 540 610" stroke="#f3dfb2" stroke-width="7" fill="none" opacity="0.8"/>
+  <path d="M305 212 L348 190 L390 246 L354 270 L316 240 Z" fill="#f4d8a3" opacity="0.8"/>
+  <path d="M478 212 L521 190 L567 246 L530 270 L490 240 Z" fill="#f4d8a3" opacity="0.8"/>
+  <path d="M242 830 L558 830 L604 916 L195 916 Z" fill="#ddb487" opacity="0.3"/>
+</svg>
