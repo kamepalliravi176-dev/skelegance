@@ -1,224 +1,672 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SK Elegance | Fashion Store</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#fffaf7;color:#292323}
-header{background:#201820;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:27px;font-weight:bold;letter-spacing:2px}
-.logo span{color:#e6bb8b}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none}
-.hero{padding:65px 8%;min-height:330px;color:white;background:linear-gradient(90deg,#201820dd,#20182022),url('assets/original-pink-1.svg') center 25%/cover no-repeat;display:flex;align-items:center}
-.hero-content{max-width:480px}
-.hero h1{font-size:clamp(36px,6vw,58px);margin-bottom:15px}
-.hero p{line-height:1.7;margin-bottom:24px}
-.btn{padding:12px 20px;border:0;border-radius:4px;background:#e6bb8b;color:#201820;font-weight:bold;cursor:pointer;text-decoration:none}
-section{padding:42px 6%}
-.section-title{text-align:center;font-size:30px;margin-bottom:12px}
-.subtitle{text-align:center;color:#777;margin-bottom:28px}
-.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.filter-btn{padding:10px 17px;border:1px solid #302630;background:white;cursor:pointer;border-radius:4px}
-.filter-btn.active,.filter-btn:hover{background:#302630;color:white}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:22px}
-.product-card{background:white;border:1px solid #eee3dc;border-radius:8px;overflow:hidden;box-shadow:0 4px 16px #0000000d}
-.product-card img{width:100%;height:390px;object-fit:cover;object-position:top;display:block;background:#f3e9e5}
-.product-info{padding:16px}
-.category{font-size:12px;color:#997044;text-transform:uppercase;letter-spacing:1px}
-.product-info h3{margin:9px 0;font-size:17px}
-.price{font-size:22px;font-weight:bold;margin:12px 0}
-.sizes{width:100%;padding:10px;border:1px solid #ddd;margin:8px 0 13px;background:white}
-.add-btn{width:100%;padding:12px;border:0;border-radius:4px;background:#302630;color:white;cursor:pointer;font-weight:bold}
-.cart{max-width:760px;margin:auto;background:white;padding:22px;border:1px solid #eee3dc;border-radius:8px}
-.cart-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #eee}
-.remove-btn{padding:8px 11px;background:#f2e5df;border:0;border-radius:4px;cursor:pointer}
-.cart-total{text-align:right;font-size:23px;font-weight:bold;margin:20px 0}
-.cart-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
-.whatsapp-btn{background:#168c4b;color:white}
-.about{background:#f3e8df;text-align:center;line-height:1.8}
-.about p{max-width:650px;margin:12px auto}
-footer{background:#201820;color:white;text-align:center;padding:24px;line-height:1.8}
-@media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,300px))}}
-@media(max-width:600px){
- header{justify-content:center;text-align:center}
- nav{justify-content:center}
- .hero{padding:40px 6%;min-height:300px}
- section{padding:32px 4%}
- .products{grid-template-columns:minmax(0,400px)}
- .product-card img{height:420px}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#241923" />
+  <meta name="description" content="Shop beautiful embroidered dresses, sarees and half sarees at SK Elegance." />
+  <title>SK Elegance | Ethnic Fashion Store</title>
+  <style>
+    :root {
+      --dark: #241923;
+      --dark-soft: #2d1d2d;
+      --gold: #d8ad76;
+      --gold-soft: #f6d8ab;
+      --cream: #fffaf5;
+      --pink: #a83d67;
+      --muted: #766d72;
+      --border: #eadfd8;
+      --card: #ffffff;
+      --shadow: rgba(36, 25, 35, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(36, 25, 35, 0.98);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--gold); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .2s ease;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      padding: 65px 8%;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(36,25,35,0.94), rgba(36,25,35,0.35)),
+        url("1.jpeg") center 30% / cover no-repeat;
+    }
+
+    .hero-content { max-width: 560px; }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.12;
+      margin: 15px 0;
+    }
+
+    .hero p {
+      max-width: 430px;
+      margin-bottom: 26px;
+      color: #f5e9e8;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 4px;
+      padding: 12px 22px;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .btn:hover {
+      filter: brightness(.94);
+      transform: translateY(-1px);
+    }
+
+    section { padding: 60px 6%; }
+
+    .section-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 4vw, 40px);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: white;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .product-card {
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px var(--shadow);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      background: #f6efe9;
+    }
+
+    .product-info { padding: 16px; }
+
+    .category {
+      font-size: 11px;
+      color: #987044;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      line-height: 1.4;
+      margin: 8px 0;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+
+    .size-label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .sizes {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0 12px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .add-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--dark);
+      color: white;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background .2s ease;
+    }
+
+    .add-btn:hover { background: var(--pink); }
+
+    .cart {
+      max-width: 850px;
+      margin: auto;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 10px 24px rgba(36,25,35,0.04);
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item p { font-size: 14px; color: var(--muted); }
+
+    .remove-btn {
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 4px;
+      background: #f6e9ed;
+      color: #922f50;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 23px;
+      font-weight: bold;
+      margin: 22px 0;
+    }
+
+    .cart-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn { background: #168c4b; color: white; }
+
+    .about {
+      text-align: center;
+      background: #f3e8df;
+    }
+
+    .about p {
+      max-width: 680px;
+      margin: 12px auto 0;
+      color: #63565d;
+      font-size: 1.02rem;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    footer p { color: #e2d5dc; font-size: 14px; }
+
+    .notice {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 1050px) {
+      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      header { justify-content: center; }
+      nav { justify-content: center; gap: 15px; }
+      .hero { min-height: 360px; padding: 45px 6%; }
+      section { padding: 42px 4%; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .product-info { padding: 12px; }
+      .product-info h3 { font-size: 14px; }
+      .price { font-size: 19px; }
+      .filter-btn { padding: 9px 12px; font-size: 13px; }
+      .cart { padding: 15px; }
+    }
+
+    @media (max-width: 360px) {
+      .products { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <a class="logo" href="#home">SK <span>ELEGANCE</span></a>
 
-<header>
-  <div class="logo">SK <span>ELEGANCE</span></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#about">About</a>
-    <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
-  </nav>
-</header>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1>Elegance in Every Thread</h1>
-    <p>Discover beautiful dresses, sarees and half sarees for every occasion.</p>
-    <a href="#shop" class="btn">SHOP COLLECTION</a>
-  </div>
-</section>
-
-<section id="shop">
-  <h2 class="section-title">Our Collection</h2>
-  <p class="subtitle">Find your favourite style at SK Elegance.</p>
-  <div class="filters">
-    <button class="filter-btn active" onclick="filterProducts('All',this)">All Products</button>
-    <button class="filter-btn" onclick="filterProducts('Original',this)">Original Dresses</button>
-    <button class="filter-btn" onclick="filterProducts('New',this)">New Dresses</button>
-    <button class="filter-btn" onclick="filterProducts('Sarees',this)">Sarees & Half Sarees</button>
-  </div>
-  <div class="products" id="products"></div>
-</section>
-
-<section id="cart">
-  <h2 class="section-title">Your Shopping Bag</h2>
-  <p class="subtitle">Review your selected products.</p>
-  <div class="cart">
-    <div id="cart-items">Your shopping bag is empty.</div>
-    <div class="cart-total">Total: ₹<span id="cart-total">0</span></div>
-    <div class="cart-actions">
-      <button class="btn" onclick="clearCart()">Clear Bag</button>
-      <button class="btn whatsapp-btn" onclick="orderWhatsApp()">Order on WhatsApp</button>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <h2 class="section-title">About SK Elegance</h2>
-  <p>Welcome to SK Elegance — your destination for elegant women's fashion, embroidered dresses, sarees and half sarees.</p>
-</section>
-
-<footer>
-  <h3>SK ELEGANCE</h3>
-  <p>Wear Your Style. Own Your Elegance.</p>
-  <p>© 2026 SK Elegance. All rights reserved.</p>
-</footer>
-
-<script>
-const products = [
-  {id:1, name:"Pink Embroidered Dress", category:"Original", price:1200, sizes:["S","M","L","XL","XXL"], image:"1.jpeg"},
-  {id:2, name:"Purple Embroidered Dress", category:"Original", price:1200, sizes:["S","M","L","XL","XXL"], image:"2.jpeg"},
-  {id:3, name:"Pink Festive Dress", category:"Original", price:1200, sizes:["S","M","L","XL","XXL"], image:"01_model_pink.jpg"},
-  {id:4, name:"Deep Purple Festive Dress", category:"Original", price:1200, sizes:["S","M","L","XL","XXL"], image:"02_model_purple.jpg"},
-  {id:5, name:"Teal Blue Embroidered Dress - XXL", category:"New", price:999, sizes:["XXL"], image:"03_model_teal_blue.jpg"},
-  {id:6, name:"Mustard Embroidered Dress - XXL", category:"New", price:999, sizes:["XXL"], image:"04_model_mustard.jpg"},
-  {id:7, name:"Green Half Saree", category:"Sarees", price:1499, sizes:["XXL"], image:"3.jpeg"},
-  {id:8, name:"White Saree with Maroon Border", category:"Sarees", price:699, sizes:["Free Size"], image:"4.jpeg"},
-  {id:9, name:"Maroon & White Half Saree", category:"Sarees", price:1749, sizes:["XL","XXL"], image:"5.jpeg"},
-  {id:10, name:"Orange & White Half Saree", category:"Sarees", price:1749, sizes:["XL","XXL"], image:"6.jpeg"}
-];
-
-let cart = [];
-
-function displayProducts(category="All") {
-  const list = category === "All" ? products : products.filter(p => p.category === category);
-  document.getElementById("products").innerHTML = list.map(p => `
-    <div class="product-card">
-      <img src="${p.image}" alt="${p.name}"
-           onerror="this.onerror=null;this.src='https://placehold.co/500x650/f3e8df/302630?text=SK+Elegance'">
-      <div class="product-info">
-        <span class="category">${p.category === "Sarees" ? "Sarees & Half Sarees" : "Women's Wear"}</span>
-        <h3>${p.name}</h3>
-        <p class="price">₹${p.price.toLocaleString("en-IN")}</p>
-        <label for="size-${p.id}">Available size:</label>
-        <select class="sizes" id="size-${p.id}">
-          ${p.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
-        </select>
-        <button class="add-btn" onclick="addToCart(${p.id})">Add to Bag</button>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">Timeless ethnic fashion</span>
+        <h1>Elegance in Every Thread</h1>
+        <p>
+          Discover beautiful embroidered dresses, graceful sarees and festive half sarees made for your special moments.
+        </p>
+        <a class="btn" href="#shop">EXPLORE COLLECTION</a>
       </div>
-    </div>
-  `).join("");
-}
+    </section>
 
-function filterProducts(category,button) {
-  displayProducts(category);
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  button.classList.add("active");
-}
+    <section id="shop">
+      <h2 class="section-title">Our Collection</h2>
+      <p class="subtitle">Find your favourite style at SK Elegance.</p>
 
-function addToCart(id) {
-  const p = products.find(x => x.id === id);
-  const size = document.getElementById("size-" + id).value;
-  const old = cart.find(x => x.id === id && x.size === size);
-
-  if (old) old.quantity++;
-  else cart.push({...p,size,quantity:1});
-
-  updateCart();
-  alert(p.name + " added to your bag!");
-}
-
-function updateCart() {
-  const el = document.getElementById("cart-items");
-  const count = cart.reduce((s,x) => s + x.quantity,0);
-  const total = cart.reduce((s,x) => s + x.price*x.quantity,0);
-
-  document.getElementById("cart-count").textContent = count;
-  document.getElementById("cart-total").textContent = total.toLocaleString("en-IN");
-
-  if (!cart.length) {
-    el.innerHTML = "<p>Your shopping bag is empty.</p>";
-    return;
-  }
-
-  el.innerHTML = cart.map((x,i) => `
-    <div class="cart-item">
-      <div>
-        <strong>${x.name}</strong>
-        <p>Size: ${x.size} | Quantity: ${x.quantity}</p>
-        <p>₹${(x.price*x.quantity).toLocaleString("en-IN")}</p>
+      <div class="filters" aria-label="Filter products">
+        <button class="filter-btn active" data-category="All">All Products</button>
+        <button class="filter-btn" data-category="Original">Original Dresses</button>
+        <button class="filter-btn" data-category="New">New Dresses</button>
+        <button class="filter-btn" data-category="Sarees">Sarees & Half Sarees</button>
       </div>
-      <button class="remove-btn" onclick="removeItem(${i})">Remove</button>
-    </div>
-  `).join("");
-}
 
-function removeItem(i) {
-  cart.splice(i,1);
-  updateCart();
-}
+      <div class="products" id="products"></div>
+      <p class="notice">Original product photos • Prices in Indian Rupees</p>
+    </section>
 
-function clearCart() {
-  if (!cart.length) {
-    alert("Your bag is already empty.");
-    return;
-  }
-  if (confirm("Clear all items?")) {
-    cart = [];
+    <section id="cart">
+      <h2 class="section-title">Your Shopping Bag</h2>
+      <p class="subtitle">Review your selected products before ordering.</p>
+
+      <div class="cart">
+        <div id="cart-items" aria-live="polite"></div>
+
+        <div class="cart-total">
+          Total: ₹<span id="cart-total">0</span>
+        </div>
+
+        <div class="cart-actions">
+          <button class="btn" id="clear-cart">Clear Bag</button>
+          <button class="btn whatsapp-btn" id="order-whatsapp">Order on WhatsApp</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">About SK Elegance</h2>
+      <p>
+        Welcome to SK Elegance, your destination for elegant women's ethnic fashion. Explore embroidered dresses,
+        sarees and half sarees for celebrations, festivals and everyday beauty.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <h3>SK ELEGANCE</h3>
+    <p>Wear Your Style. Own Your Elegance.</p>
+    <p>© <span id="year"></span> SK Elegance. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Pink Embroidered Dress",
+        category: "Original",
+        price: 1200,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        image: "assets/original-pink-1.svg"
+      },
+      {
+        id: 2,
+        name: "Purple Embroidered Dress",
+        category: "Original",
+        price: 1200,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        image: "assets/original-purple-1.svg"
+      },
+      {
+        id: 3,
+        name: "Pink Festive Dress",
+        category: "Original",
+        price: 999,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        image: "assets/pink-dress.svg"
+      },
+      {
+        id: 4,
+        name: "Deep Purple Festive Dress",
+        category: "Original",
+        price: 999,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        image: "assets/purple-dress.svg"
+      },
+      {
+        id: 5,
+        name: "Teal Blue Embroidered Dress - XXL",
+        category: "New",
+        price: 999,
+        sizes: ["XXL"],
+        image: "assets/teal-dress.svg"
+      },
+      {
+        id: 6,
+        name: "Mustard Embroidered Dress - XXL",
+        category: "New",
+        price: 999,
+        sizes: ["XXL"],
+        image: "assets/mustard-dress.svg"
+      },
+      {
+        id: 7,
+        name: "Green Half Saree",
+        category: "Sarees",
+        price: 1499,
+        sizes: ["XXL"],
+        image: "assets/green-saree.svg"
+      },
+      {
+        id: 8,
+        name: "White Saree with Maroon Border",
+        category: "Sarees",
+        price: 699,
+        sizes: ["Free Size"],
+        image: "assets/white-saree.svg"
+      },
+      {
+        id: 9,
+        name: "Maroon & White Half Saree",
+        category: "Sarees",
+        price: 1749,
+        sizes: ["XL", "XXL"],
+        image: "assets/maroon-saree.svg"
+      },
+      {
+        id: 10,
+        name: "Orange & White Half Saree",
+        category: "Sarees",
+        price: 1749,
+        sizes: ["XL", "XXL"],
+        image: "assets/orange-saree.svg"
+      }
+    ];
+
+    const WHATSAPP_NUMBER = "917093001723";
+
+    let cart = [];
+    let activeCategory = "All";
+
+    const money = amount => amount.toLocaleString("en-IN");
+
+    function displayProducts(category = "All") {
+      activeCategory = category;
+
+      const filtered = category === "All"
+        ? products
+        : products.filter(product => product.category === category);
+
+      const container = document.getElementById("products");
+
+      container.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <img
+            class="product-image"
+            src="${product.image}"
+            alt="${product.name}"
+            loading="${product.id <= 4 ? "eager" : "lazy"}"
+            onerror="this.onerror=null; this.src='https://placehold.co/600x800/f3e8df/241923?text=Image+Unavailable';"
+          >
+
+          <div class="product-info">
+            <span class="category">
+              ${product.category === "Sarees"
+                ? "Sarees & Half Sarees"
+                : product.category === "New"
+                  ? "New Collection"
+                  : "Original Collection"}
+            </span>
+
+            <h3>${product.name}</h3>
+            <p class="price">₹${money(product.price)}</p>
+
+            <label class="size-label" for="size-${product.id}">Select size</label>
+            <select class="sizes" id="size-${product.id}">
+              ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")}
+            </select>
+
+            <button class="add-btn" data-add="${product.id}">Add to Bag</button>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    document.querySelector(".filters").addEventListener("click", event => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+
+      document.querySelectorAll(".filter-btn").forEach(item => {
+        item.classList.toggle("active", item === button);
+      });
+
+      displayProducts(button.dataset.category);
+    });
+
+    document.getElementById("products").addEventListener("click", event => {
+      const button = event.target.closest("[data-add]");
+      if (!button) return;
+
+      addToCart(Number(button.dataset.add));
+    });
+
+    function addToCart(id) {
+      const product = products.find(item => item.id === id);
+      const size = document.getElementById(`size-${id}`).value;
+
+      const existing = cart.find(item => item.id === id && item.size === size);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, size, quantity: 1 });
+      }
+
+      updateCart();
+    }
+
+    function updateCart() {
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      document.getElementById("cart-count").textContent = count;
+      document.getElementById("cart-total").textContent = money(total);
+
+      const container = document.getElementById("cart-items");
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="empty-cart">Your shopping bag is empty. Explore our collection!</p>';
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div>
+            <strong>${item.name}</strong>
+            <p>Size: ${item.size} · Quantity: ${item.quantity}</p>
+            <p>₹${money(item.price * item.quantity)}</p>
+          </div>
+
+          <button class="remove-btn" data-remove="${item.id}" data-size="${item.size}">Remove</button>
+        </div>
+      `).join("");
+    }
+
+    document.getElementById("cart-items").addEventListener("click", event => {
+      const button = event.target.closest("[data-remove]");
+      if (!button) return;
+
+      const id = Number(button.dataset.remove);
+      const size = button.dataset.size;
+      const index = cart.findIndex(item => item.id === id && item.size === size);
+
+      if (index !== -1) cart.splice(index, 1);
+      updateCart();
+    });
+
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      if (cart.length === 0) {
+        alert("Your shopping bag is already empty.");
+        return;
+      }
+
+      if (confirm("Are you sure you want to clear your bag?")) {
+        cart = [];
+        updateCart();
+      }
+    });
+
+    document.getElementById("order-whatsapp").addEventListener("click", () => {
+      if (cart.length === 0) {
+        alert("Please add a product to your bag first.");
+        return;
+      }
+
+      const details = cart.map(item =>
+        `${item.name}\nSize: ${item.size}\nQuantity: ${item.quantity}\nSubtotal: ₹${money(item.price * item.quantity)}`
+      ).join("\n\n");
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const message =
+        `Hello SK Elegance! I would like to place an order:\n\n` +
+        `${details}\n\nTotal: ₹${money(total)}\n\n` +
+        `Please confirm availability and delivery details.`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    displayProducts();
     updateCart();
-  }
-}
-
-function orderWhatsApp() {
-  if (!cart.length) {
-    alert("Please add a product first.");
-    return;
-  }
-
-  const details = cart.map(x => `${x.name}\nSize: ${x.size}\nQuantity: ${x.quantity}\nPrice: ₹${x.price*x.quantity}`).join("\n\n");
-  const total = cart.reduce((s,x) => s + x.price*x.quantity,0);
-  const message = `Hello SK Elegance! I would like to order:\n\n${details}\n\nTotal: ₹${total}`;
-  const whatsappNumber = "917093001723";
-
-  window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
-}
-
-displayProducts();
-updateCart();
-</script>
+  </script>
 </body>
 </html>
