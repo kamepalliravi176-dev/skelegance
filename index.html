@@ -4,27 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#241923" />
-  <meta name="description" content="Shop beautiful embroidered dresses, sarees and half sarees at SK Elegance." />
-  <title>SK Elegance | Ethnic Fashion Store</title>
+  <meta name="description" content="Shop exquisite embroidered dresses, sarees and half sarees at SK Elegance." />
+  <title>SK Elegance | Premium Ethnic Fashion</title>
   <style>
     :root {
       --dark: #241923;
-      --dark-soft: #2d1d2d;
+      --dark-2: #341f31;
       --gold: #d8ad76;
-      --gold-soft: #f6d8ab;
+      --gold-soft: #f4ddbb;
       --cream: #fffaf5;
+      --cream-2: #f7f0eb;
       --pink: #a83d67;
-      --muted: #766d72;
+      --muted: #6d5d65;
       --border: #eadfd8;
       --card: #ffffff;
       --shadow: rgba(36, 25, 35, 0.12);
+      --success: #12814d;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
+      background: linear-gradient(180deg, #fffaf5 0%, #fffaf5 100%);
       color: var(--dark);
       line-height: 1.6;
     }
@@ -34,23 +36,32 @@
     button, select { font: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
 
+    .container {
+      width: min(1400px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(36, 25, 35, 0.98);
+      z-index: 20;
+      background: rgba(36, 25, 35, 0.97);
+      backdrop-filter: blur(8px);
       color: white;
-      padding: 18px 6%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 20px;
+      padding: 18px 0;
       flex-wrap: wrap;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
 
     .logo {
-      font-size: 25px;
+      font-size: 26px;
       font-weight: 800;
       letter-spacing: 2px;
       color: white;
@@ -62,7 +73,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
@@ -70,93 +81,176 @@
       color: white;
       text-decoration: none;
       font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       transition: color .2s ease;
     }
 
     nav a:hover { color: var(--gold); }
 
     .hero {
-      min-height: 460px;
+      position: relative;
+      min-height: 540px;
       display: flex;
       align-items: center;
-      padding: 65px 8%;
-      color: white;
       background:
-        linear-gradient(90deg, rgba(36,25,35,0.94), rgba(36,25,35,0.35)),
-        url("1.jpeg") center 30% / cover no-repeat;
+        linear-gradient(90deg, rgba(36,25,35,0.92), rgba(36,25,35,0.45)),
+        url("1.jpeg") center 35% / cover no-repeat;
+      color: white;
+      overflow: hidden;
     }
 
-    .hero-content { max-width: 560px; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(216,173,118,0.28), transparent 38%);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-items: center;
+      min-height: 500px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      padding: 30px 0;
+    }
 
     .eyebrow {
-      color: var(--gold);
+      color: var(--gold-soft);
       letter-spacing: 3px;
       text-transform: uppercase;
       font-size: 12px;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .hero h1 {
       font-family: Georgia, serif;
-      font-size: clamp(38px, 6vw, 65px);
-      line-height: 1.12;
-      margin: 15px 0;
+      font-size: clamp(42px, 6.2vw, 72px);
+      line-height: 1.08;
+      margin: 16px 0 16px;
+      letter-spacing: -0.03em;
     }
 
     .hero p {
-      max-width: 430px;
-      margin-bottom: 26px;
-      color: #f5e9e8;
+      max-width: 480px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border: 0;
-      border-radius: 4px;
-      padding: 12px 22px;
-      background: var(--gold);
+      border-radius: 999px;
+      padding: 14px 26px;
+      background: linear-gradient(135deg, var(--gold) 0%, #f1c98d 100%);
       color: var(--dark);
-      font-weight: bold;
+      font-weight: 800;
       text-decoration: none;
       cursor: pointer;
       transition: transform .2s ease, filter .2s ease;
+      box-shadow: 0 12px 22px rgba(216,173,118,0.22);
     }
 
     .btn:hover {
-      filter: brightness(.94);
+      filter: brightness(.96);
       transform: translateY(-1px);
     }
 
-    section { padding: 60px 6%; }
+    .btn.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.52);
+      box-shadow: none;
+    }
+
+    .info-strip {
+      background: var(--cream-2);
+      border-top: 1px solid rgba(36,25,35,0.04);
+      border-bottom: 1px solid rgba(36,25,35,0.04);
+    }
+
+    .info-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      padding: 18px 0;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      text-align: center;
+      color: var(--dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .info-item span {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: white;
+      border: 1px solid var(--border);
+      font-size: 1.1rem;
+    }
+
+    section { padding: 70px 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
 
     .section-title {
-      text-align: center;
       font-family: Georgia, serif;
-      font-size: clamp(30px, 4vw, 40px);
+      font-size: clamp(30px, 4vw, 42px);
       margin-bottom: 8px;
+      letter-spacing: -0.025em;
     }
 
     .subtitle {
       color: var(--muted);
-      text-align: center;
-      margin-bottom: 28px;
+      max-width: 620px;
+      margin: 0 auto;
     }
 
     .filters {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      margin: 0 auto 30px;
+      max-width: 760px;
     }
 
     .filter-btn {
-      padding: 10px 16px;
+      padding: 11px 18px;
       border: 1px solid var(--border);
-      border-radius: 25px;
       background: white;
+      color: var(--dark);
+      border-radius: 999px;
       cursor: pointer;
       transition: all .2s ease;
+      font-weight: 700;
     }
 
     .filter-btn.active,
@@ -164,6 +258,7 @@
       background: var(--dark);
       color: white;
       border-color: var(--dark);
+      box-shadow: 0 10px 20px rgba(36, 25, 35, 0.12);
     }
 
     .products {
@@ -171,99 +266,138 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 22px;
       max-width: 1400px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     .product-card {
       min-width: 0;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 18px;
       overflow: hidden;
       transition: transform .2s ease, box-shadow .2s ease;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
     }
 
     .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px var(--shadow);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px var(--shadow);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      background: #f7eee9;
     }
 
     .product-image {
       width: 100%;
-      aspect-ratio: 3/4;
-      display: block;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center top;
-      background: #f6efe9;
+      display: block;
+      background: #f7eee9;
     }
 
-    .product-info { padding: 16px; }
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(36,25,35,0.92);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-weight: 700;
+    }
+
+    .product-info {
+      padding: 18px 18px 16px;
+    }
 
     .category {
+      display: inline-block;
+      margin-bottom: 8px;
       font-size: 11px;
-      color: #987044;
+      color: #9b6e2f;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      font-weight: bold;
+      font-weight: 800;
     }
 
     .product-info h3 {
-      font-size: 16px;
-      line-height: 1.4;
-      margin: 8px 0;
+      font-size: 17px;
+      line-height: 1.35;
+      min-height: 46px;
+      margin-bottom: 8px;
     }
 
     .price {
-      font-size: 22px;
+      font-size: 25px;
       font-weight: 800;
-      margin: 10px 0;
+      margin-top: 10px;
+      color: var(--dark);
     }
 
     .size-label {
       display: block;
       font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin: 16px 0 7px;
+      color: var(--muted);
     }
 
     .sizes {
       width: 100%;
-      padding: 10px;
-      margin: 6px 0 12px;
-      background: white;
+      padding: 10px 12px;
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 8px;
+      background: white;
+      color: var(--dark);
+      outline: none;
     }
 
     .add-btn {
       width: 100%;
-      padding: 12px;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 0;
+      border-radius: 10px;
       background: var(--dark);
       color: white;
-      border: 0;
-      border-radius: 4px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 700;
       transition: background .2s ease;
     }
 
     .add-btn:hover { background: var(--pink); }
 
+    .notice {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    .cart-wrap {
+      background: linear-gradient(180deg, rgba(243,232,223,0.3), rgba(255,255,255,0));
+    }
+
     .cart {
-      max-width: 850px;
-      margin: auto;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      max-width: 880px;
+      margin: 0 auto;
       background: white;
-      box-shadow: 0 10px 24px rgba(36,25,35,0.04);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px 22px 18px;
+      box-shadow: 0 15px 30px rgba(36,25,35,0.04);
     }
 
     .empty-cart {
       text-align: center;
       color: var(--muted);
-      padding: 20px 0;
+      padding: 24px 0 10px;
     }
 
     .cart-item {
@@ -271,159 +405,252 @@
       justify-content: space-between;
       align-items: center;
       gap: 14px;
-      padding: 15px 0;
+      padding: 18px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .cart-item p { font-size: 14px; color: var(--muted); }
+    .cart-item:last-child { border-bottom: 0; }
+
+    .cart-item p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
 
     .remove-btn {
-      padding: 8px 12px;
+      padding: 9px 12px;
       border: 0;
-      border-radius: 4px;
-      background: #f6e9ed;
-      color: #922f50;
+      border-radius: 999px;
+      background: #f7e7ee;
+      color: #9e335d;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .cart-total {
       text-align: right;
-      font-size: 23px;
-      font-weight: bold;
-      margin: 22px 0;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      margin: 25px 0 18px;
     }
 
     .cart-actions {
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
-    .whatsapp-btn { background: #168c4b; color: white; }
-
-    .about {
-      text-align: center;
-      background: #f3e8df;
+    .whatsapp-btn {
+      background: #1a9f5a;
+      color: white;
+      box-shadow: 0 12px 22px rgba(26,159,90,0.18);
     }
 
-    .about p {
-      max-width: 680px;
-      margin: 12px auto 0;
-      color: #63565d;
-      font-size: 1.02rem;
+    .about {
+      background: linear-gradient(180deg, #f5ebe4, #f8f3f0);
+    }
+
+    .about-box {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.48);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      padding-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 28px 15px;
+      padding: 32px 18px;
     }
 
-    footer p { color: #e2d5dc; font-size: 14px; }
+    footer h3 {
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
 
-    .notice {
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 15px;
+    footer p {
+      color: rgba(255,255,255,0.78);
+      margin-top: 6px;
+      font-size: 14px;
     }
 
     @media (max-width: 1050px) {
       .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .info-strip-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 700px) {
-      header { justify-content: center; }
-      nav { justify-content: center; gap: 15px; }
-      .hero { min-height: 360px; padding: 45px 6%; }
-      section { padding: 42px 4%; }
-      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .product-info { padding: 12px; }
-      .product-info h3 { font-size: 14px; }
-      .price { font-size: 19px; }
-      .filter-btn { padding: 9px 12px; font-size: 13px; }
-      .cart { padding: 15px; }
+    @media (max-width: 760px) {
+      .header-inner { justify-content: center; }
+      nav { justify-content: center; }
+      .hero { min-height: 440px; }
+      .hero h1 { margin-bottom: 12px; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: 1fr; }
+      .cart { padding: 16px; }
+      .cart-actions { justify-content: center; }
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 480px) {
       .products { grid-template-columns: 1fr; }
+      .info-strip-inner { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .cart-item { align-items: flex-start; flex-direction: column; }
+      .remove-btn { align-self: flex-end; }
+      .btn { width: 100%; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <a class="logo" href="#home">SK <span>ELEGANCE</span></a>
+    <div class="container header-inner">
+      <a class="logo" href="#home">SK <span>ELEGANCE</span></a>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
-    </nav>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-content">
-        <span class="eyebrow">Timeless ethnic fashion</span>
-        <h1>Elegance in Every Thread</h1>
-        <p>
-          Discover beautiful embroidered dresses, graceful sarees and festive half sarees made for your special moments.
-        </p>
-        <a class="btn" href="#shop">EXPLORE COLLECTION</a>
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Timeless ethnic fashion</span>
+          <h1>Elegance in Every Thread</h1>
+          <p>
+            Discover exquisite embroidered dresses, graceful sarees and festive half sarees made for celebrations,
+            family moments and everyday beauty.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#shop">Explore Collection</a>
+            <a class="btn secondary" href="#about">Our Story</a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <div class="info-strip">
+      <div class="container info-strip-inner">
+        <div class="info-item"><span>✓</span> Premium quality fabrics</div>
+        <div class="info-item"><span>✓</span> Festival-ready looks</div>
+        <div class="info-item"><span>✓</span> Tailored to flatter</div>
+        <div class="info-item"><span>✓</span> Fast WhatsApp ordering</div>
+      </div>
+    </div>
 
     <section id="shop">
-      <h2 class="section-title">Our Collection</h2>
-      <p class="subtitle">Find your favourite style at SK Elegance.</p>
-
-      <div class="filters" aria-label="Filter products">
-        <button class="filter-btn active" data-category="All">All Products</button>
-        <button class="filter-btn" data-category="Original">Original Dresses</button>
-        <button class="filter-btn" data-category="New">New Dresses</button>
-        <button class="filter-btn" data-category="Sarees">Sarees & Half Sarees</button>
-      </div>
-
-      <div class="products" id="products"></div>
-      <p class="notice">Original product photos • Prices in Indian Rupees</p>
-    </section>
-
-    <section id="cart">
-      <h2 class="section-title">Your Shopping Bag</h2>
-      <p class="subtitle">Review your selected products before ordering.</p>
-
-      <div class="cart">
-        <div id="cart-items" aria-live="polite"></div>
-
-        <div class="cart-total">
-          Total: ₹<span id="cart-total">0</span>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Collection</h2>
+          <p class="subtitle">Find your favourite style at SK Elegance.</p>
         </div>
 
-        <div class="cart-actions">
-          <button class="btn" id="clear-cart">Clear Bag</button>
-          <button class="btn whatsapp-btn" id="order-whatsapp">Order on WhatsApp</button>
+        <div class="filters" aria-label="Filter products">
+          <button class="filter-btn active" data-category="All">All Products</button>
+          <button class="filter-btn" data-category="Original">Original Dresses</button>
+          <button class="filter-btn" data-category="New">New Dresses</button>
+          <button class="filter-btn" data-category="Sarees">Sarees & Half Sarees</button>
+        </div>
+
+        <div class="products" id="products"></div>
+        <p class="notice">Original product photos • Prices in Indian Rupees</p>
+      </div>
+    </section>
+
+    <section class="cart-wrap" id="cart">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Your Shopping Bag</h2>
+          <p class="subtitle">Review your selected products before ordering.</p>
+        </div>
+
+        <div class="cart">
+          <div id="cart-items" aria-live="polite"></div>
+
+          <div class="cart-total">
+            Total: ₹<span id="cart-total">0</span>
+          </div>
+
+          <div class="cart-actions">
+            <button class="btn" id="clear-cart">Clear Bag</button>
+            <button class="btn whatsapp-btn" id="order-whatsapp">Order on WhatsApp</button>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="about" id="about">
-      <h2 class="section-title">About SK Elegance</h2>
-      <p>
-        Welcome to SK Elegance, your destination for elegant women's ethnic fashion. Explore embroidered dresses,
-        sarees and half sarees for celebrations, festivals and everyday beauty.
-      </p>
+      <div class="container about-box">
+        <div class="section-header">
+          <h2 class="section-title">About SK Elegance</h2>
+        </div>
+        <p>
+          Welcome to SK Elegance, your destination for elegant women's ethnic fashion. From embroidered dresses to graceful
+          festive sarees and half sarees, each piece is designed to celebrate beauty, comfort and confidence.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>1200+</strong>
+            <span>Happy customers</span>
+          </div>
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Curated styles</span>
+          </div>
+          <div class="stat">
+            <strong>4.9/5</strong>
+            <span>Customer love</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <h3>SK ELEGANCE</h3>
-    <p>Wear Your Style. Own Your Elegance.</p>
-    <p>© <span id="year"></span> SK Elegance. All rights reserved.</p>
+    <div class="container">
+      <h3>SK ELEGANCE</h3>
+      <p>Wear Your Style. Own Your Elegance.</p>
+      <p>© <span id="year"></span> SK Elegance. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
@@ -434,7 +661,8 @@
         category: "Original",
         price: 1200,
         sizes: ["S", "M", "L", "XL", "XXL"],
-        image: "assets/original-pink-1.svg"
+        image: "assets/original-pink-1.svg",
+        badge: "Original"
       },
       {
         id: 2,
@@ -442,7 +670,8 @@
         category: "Original",
         price: 1200,
         sizes: ["S", "M", "L", "XL", "XXL"],
-        image: "assets/original-purple-1.svg"
+        image: "assets/original-purple-1.svg",
+        badge: "Original"
       },
       {
         id: 3,
@@ -450,7 +679,8 @@
         category: "Original",
         price: 999,
         sizes: ["S", "M", "L", "XL", "XXL"],
-        image: "assets/pink-dress.svg"
+        image: "assets/pink-dress.svg",
+        badge: "Best Seller"
       },
       {
         id: 4,
@@ -458,7 +688,8 @@
         category: "Original",
         price: 999,
         sizes: ["S", "M", "L", "XL", "XXL"],
-        image: "assets/purple-dress.svg"
+        image: "assets/purple-dress.svg",
+        badge: "New"
       },
       {
         id: 5,
@@ -466,7 +697,8 @@
         category: "New",
         price: 999,
         sizes: ["XXL"],
-        image: "assets/teal-dress.svg"
+        image: "assets/teal-dress.svg",
+        badge: "New"
       },
       {
         id: 6,
@@ -474,7 +706,8 @@
         category: "New",
         price: 999,
         sizes: ["XXL"],
-        image: "assets/mustard-dress.svg"
+        image: "assets/mustard-dress.svg",
+        badge: "Trending"
       },
       {
         id: 7,
@@ -482,7 +715,8 @@
         category: "Sarees",
         price: 1499,
         sizes: ["XXL"],
-        image: "assets/green-saree.svg"
+        image: "assets/green-saree.svg",
+        badge: "Festive"
       },
       {
         id: 8,
@@ -490,7 +724,8 @@
         category: "Sarees",
         price: 699,
         sizes: ["Free Size"],
-        image: "assets/white-saree.svg"
+        image: "assets/white-saree.svg",
+        badge: "Classic"
       },
       {
         id: 9,
@@ -498,7 +733,8 @@
         category: "Sarees",
         price: 1749,
         sizes: ["XL", "XXL"],
-        image: "assets/maroon-saree.svg"
+        image: "assets/maroon-saree.svg",
+        badge: "Limited"
       },
       {
         id: 10,
@@ -506,35 +742,34 @@
         category: "Sarees",
         price: 1749,
         sizes: ["XL", "XXL"],
-        image: "assets/orange-saree.svg"
+        image: "assets/orange-saree.svg",
+        badge: "Signature"
       }
     ];
 
     const WHATSAPP_NUMBER = "917093001723";
-
     let cart = [];
-    let activeCategory = "All";
 
     const money = amount => amount.toLocaleString("en-IN");
 
     function displayProducts(category = "All") {
-      activeCategory = category;
-
       const filtered = category === "All"
         ? products
         : products.filter(product => product.category === category);
 
       const container = document.getElementById("products");
-
       container.innerHTML = filtered.map(product => `
         <article class="product-card">
-          <img
-            class="product-image"
-            src="${product.image}"
-            alt="${product.name}"
-            loading="${product.id <= 4 ? "eager" : "lazy"}"
-            onerror="this.onerror=null; this.src='https://placehold.co/600x800/f3e8df/241923?text=Image+Unavailable';"
-          >
+          <div class="product-image-wrap">
+            <span class="badge">${product.badge}</span>
+            <img
+              class="product-image"
+              src="${product.image}"
+              alt="${product.name}"
+              loading="${product.id <= 4 ? "eager" : "lazy"}"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/f3e8df/241923?text=Image+Unavailable';"
+            >
+          </div>
 
           <div class="product-info">
             <span class="category">
@@ -573,14 +808,12 @@
     document.getElementById("products").addEventListener("click", event => {
       const button = event.target.closest("[data-add]");
       if (!button) return;
-
       addToCart(Number(button.dataset.add));
     });
 
     function addToCart(id) {
       const product = products.find(item => item.id === id);
       const size = document.getElementById(`size-${id}`).value;
-
       const existing = cart.find(item => item.id === id && item.size === size);
 
       if (existing) {
@@ -664,7 +897,6 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
-
     displayProducts();
     updateCart();
   </script>
