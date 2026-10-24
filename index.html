@@ -1,589 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SK Elegance | Women's Fashion</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #fffaf7;
-      color: #292323;
-    }
-
-    header {
-      background: #201820;
-      color: white;
-      padding: 20px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 27px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: #e6bb8b;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #e6bb8b;
-    }
-
-    .hero {
-      min-height: 400px;
-      padding: 65px 8%;
-      display: flex;
-      align-items: center;
-      color: white;
-      background:
-        linear-gradient(90deg, rgba(24, 15, 23, .8), rgba(24, 15, 23, .15)),
-        url("2.jpeg") center 25% / cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 470px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 60px);
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      border: none;
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 4px;
-      background: #e6bb8b;
-      color: #201820;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      opacity: .85;
-    }
-
-    section {
-      padding: 45px 6%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #777;
-      margin-bottom: 30px;
-    }
-
-    .filters {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .filter-btn {
-      border: 1px solid #302630;
-      background: white;
-      padding: 11px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: #302630;
-      color: white;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 320px));
-      justify-content: center;
-      gap: 28px;
-    }
-
-    .product-card {
-      background: white;
-      border: 1px solid #eee3dc;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, .05);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      background: #f3e9e5;
-    }
-
-    .product-info {
-      padding: 18px;
-    }
-
-    .category {
-      font-size: 12px;
-      color: #997044;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .product-info h3 {
-      margin: 9px 0;
-      font-size: 18px;
-    }
-
-    .price {
-      font-size: 23px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-
-    .sizes {
-      width: 100%;
-      padding: 11px;
-      border: 1px solid #ddd;
-      margin: 8px 0 14px;
-      background: white;
-    }
-
-    .add-btn {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: 4px;
-      background: #302630;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .add-btn:hover {
-      background: #997044;
-    }
-
-    .cart {
-      max-width: 750px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border: 1px solid #eee3dc;
-      border-radius: 8px;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .remove-btn {
-      padding: 8px 11px;
-      background: #f2e5df;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .cart-total {
-      text-align: right;
-      font-size: 23px;
-      font-weight: bold;
-      margin: 22px 0;
-    }
-
-    .cart-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .whatsapp-btn {
-      background: #168c4b;
-      color: white;
-    }
-
-    .about {
-      background: #f3e8df;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    .about p {
-      max-width: 650px;
-      margin: 12px auto;
-    }
-
-    footer {
-      background: #201820;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 650px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .hero {
-        min-height: 330px;
-        padding: 40px 6%;
-      }
-
-      section {
-        padding: 35px 4%;
-      }
-
-      .products {
-        grid-template-columns: minmax(0, 400px);
-      }
-
-      .product-card img {
-        height: 400px;
-      }
-
-      .cart {
-        padding: 16px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK Elegance | Fashion Store</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#fffaf7;color:#292323}
+header{background:#201820;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:27px;font-weight:bold;letter-spacing:2px}
+.logo span{color:#e6bb8b}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}
+.hero{padding:65px 8%;min-height:330px;color:white;background:linear-gradient(90deg,#201820dd,#20182022),url('1.jpeg') center 25%/cover no-repeat;display:flex;align-items:center}
+.hero-content{max-width:480px}
+.hero h1{font-size:clamp(36px,6vw,58px);margin-bottom:15px}
+.hero p{line-height:1.7;margin-bottom:24px}
+.btn{padding:12px 20px;border:0;border-radius:4px;background:#e6bb8b;color:#201820;font-weight:bold;cursor:pointer;text-decoration:none}
+section{padding:42px 6%}
+.section-title{text-align:center;font-size:30px;margin-bottom:12px}
+.subtitle{text-align:center;color:#777;margin-bottom:28px}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filter-btn{padding:10px 17px;border:1px solid #302630;background:white;cursor:pointer;border-radius:4px}
+.filter-btn.active,.filter-btn:hover{background:#302630;color:white}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:22px}
+.product-card{background:white;border:1px solid #eee3dc;border-radius:8px;overflow:hidden;box-shadow:0 4px 16px #0000000d}
+.product-card img{width:100%;height:390px;object-fit:cover;object-position:top;display:block;background:#f3e9e5}
+.product-info{padding:16px}
+.category{font-size:12px;color:#997044;text-transform:uppercase;letter-spacing:1px}
+.product-info h3{margin:9px 0;font-size:17px}
+.price{font-size:22px;font-weight:bold;margin:12px 0}
+.sizes{width:100%;padding:10px;border:1px solid #ddd;margin:8px 0 13px;background:white}
+.add-btn{width:100%;padding:12px;border:0;border-radius:4px;background:#302630;color:white;cursor:pointer;font-weight:bold}
+.cart{max-width:760px;margin:auto;background:white;padding:22px;border:1px solid #eee3dc;border-radius:8px}
+.cart-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #eee}
+.remove-btn{padding:8px 11px;background:#f2e5df;border:0;border-radius:4px;cursor:pointer}
+.cart-total{text-align:right;font-size:23px;font-weight:bold;margin:20px 0}
+.cart-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.whatsapp-btn{background:#168c4b;color:white}
+.about{background:#f3e8df;text-align:center;line-height:1.8}
+.about p{max-width:650px;margin:12px auto}
+footer{background:#201820;color:white;text-align:center;padding:24px;line-height:1.8}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,300px))}}
+@media(max-width:600px){
+ header{justify-content:center;text-align:center}
+ nav{justify-content:center}
+ .hero{padding:40px 6%;min-height:300px}
+ section{padding:32px 4%}
+ .products{grid-template-columns:minmax(0,400px)}
+ .product-card img{height:420px}
+}
+</style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">SK <span>ELEGANCE</span></div>
+<header>
+  <div class="logo">SK <span>ELEGANCE</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop Dresses</a>
-      <a href="#about">About</a>
-      <a href="#cart">Shopping Bag (<span id="cart-count">0</span>)</a>
-    </nav>
-  </header>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Elegance in Every Thread</h1>
+    <p>Discover beautiful dresses, sarees and half sarees for every occasion.</p>
+    <a href="#shop" class="btn">SHOP COLLECTION</a>
+  </div>
+</section>
 
-  <!-- HOME BANNER -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Elegance in Every Thread</h1>
-      <p>
-        Discover beautiful embroidered outfits designed
-        to make every occasion special.
-      </p>
-      <a href="#shop" class="btn">SHOP COLLECTION</a>
+<section id="shop">
+  <h2 class="section-title">Our Collection</h2>
+  <p class="subtitle">Find your favourite style at SK Elegance.</p>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterProducts('All',this)">All Products</button>
+    <button class="filter-btn" onclick="filterProducts('Original',this)">Original Dresses</button>
+    <button class="filter-btn" onclick="filterProducts('New',this)">New Dresses</button>
+    <button class="filter-btn" onclick="filterProducts('Sarees',this)">Sarees & Half Sarees</button>
+  </div>
+  <div class="products" id="products"></div>
+</section>
+
+<section id="cart">
+  <h2 class="section-title">Your Shopping Bag</h2>
+  <p class="subtitle">Review your selected products.</p>
+  <div class="cart">
+    <div id="cart-items">Your shopping bag is empty.</div>
+    <div class="cart-total">Total: ₹<span id="cart-total">0</span></div>
+    <div class="cart-actions">
+      <button class="btn" onclick="clearCart()">Clear Bag</button>
+      <button class="btn whatsapp-btn" onclick="orderWhatsApp()">Order on WhatsApp</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TWO DRESSES ONLY -->
-  <section id="shop">
-    <h2 class="section-title">Our Dress Collection</h2>
-    <p class="subtitle">
-      Beautiful styles, one elegant price.
-    </p>
+<section class="about" id="about">
+  <h2 class="section-title">About SK Elegance</h2>
+  <p>Welcome to SK Elegance — your destination for elegant women's fashion, embroidered dresses, sarees and half sarees.</p>
+</section>
 
-    <div class="filters">
-      <button class="filter-btn active"
-        onclick="filterProducts('All', this)">
-        All Dresses
-      </button>
+<footer>
+  <h3>SK ELEGANCE</h3>
+  <p>Wear Your Style. Own Your Elegance.</p>
+  <p>© 2026 SK Elegance. All rights reserved.</p>
+</footer>
 
-      <button class="filter-btn"
-        onclick="filterProducts('Womens Wear', this)">
-        Women's Wear
-      </button>
+<script>
+const products = [
+  {
+    id:1, name:"Pink Embroidered Dress",
+    category:"Original", price:1200,
+    sizes:["S","M","L","XL","XXL"], image:"1.jpeg"
+  },
+  {
+    id:2, name:"Purple Embroidered Dress",
+    category:"Original", price:1200,
+    sizes:["S","M","L","XL","XXL"], image:"2.jpeg"
+  },
+  {
+    id:3, name:"Pink Embroidered Dress - XXL",
+    category:"New", price:999,
+    sizes:["XXL"], image:"01_model_pink.jpg"
+  },
+  {
+    id:4, name:"Purple Embroidered Dress - XXL",
+    category:"New", price:999,
+    sizes:["XXL"], image:"02_model_purple.jpg"
+  },
+  {
+    id:5, name:"Teal Blue Embroidered Dress - XXL",
+    category:"New", price:999,
+    sizes:["XXL"], image:"03_model_teal_blue.jpg"
+  },
+  {
+    id:6, name:"Mustard Embroidered Dress - XXL",
+    category:"New", price:999,
+    sizes:["XXL"], image:"04_model_mustard.jpg"
+  },
+  {
+    id:7, name:"Green Half Saree",
+    category:"Sarees", price:1499,
+    sizes:["XXL"], image:"3.jpeg"
+  },
+  {
+    id:8, name:"White Saree with Maroon Border",
+    category:"Sarees", price:699,
+    sizes:["Free Size"], image:"4.jpeg"
+  },
+  {
+    id:9, name:"Maroon & White Half Saree",
+    category:"Sarees", price:1749,
+    sizes:["XL","XXL"], image:"5.jpeg"
+  },
+  {
+    id:10, name:"Orange & White Half Saree",
+    category:"Sarees", price:1749,
+    sizes:["XL","XXL"], image:"6.jpeg"
+  }
+];
+
+let cart = [];
+
+function displayProducts(category="All") {
+  const list = category === "All" ? products : products.filter(p => p.category === category);
+  document.getElementById("products").innerHTML = list.map(p => `
+    <div class="product-card">
+      <img src="${p.image}" alt="${p.name}"
+           onerror="this.onerror=null;this.src='https://placehold.co/500x650/f3e8df/302630?text=SK+Elegance'">
+      <div class="product-info">
+        <span class="category">${p.category === "Sarees" ? "Sarees & Half Sarees" : "Women's Wear"}</span>
+        <h3>${p.name}</h3>
+        <p class="price">₹${p.price.toLocaleString("en-IN")}</p>
+        <label for="size-${p.id}">Available size:</label>
+        <select class="sizes" id="size-${p.id}">
+          ${p.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
+        </select>
+        <button class="add-btn" onclick="addToCart(${p.id})">Add to Bag</button>
+      </div>
     </div>
+  `).join("");
+}
 
-    <div class="products" id="products"></div>
-  </section>
+function filterProducts(category,button) {
+  displayProducts(category);
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  button.classList.add("active");
+}
 
-  <!-- SHOPPING BAG -->
-  <section id="cart">
-    <h2 class="section-title">Your Shopping Bag</h2>
-    <p class="subtitle">Review your selected dresses.</p>
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  const size = document.getElementById("size-" + id).value;
+  const old = cart.find(x => x.id === id && x.size === size);
 
-    <div class="cart">
-      <div id="cart-items">
-        Your shopping bag is empty.
+  if (old) old.quantity++;
+  else cart.push({...p,size,quantity:1});
+
+  updateCart();
+  alert(p.name + " added to your bag!");
+}
+
+function updateCart() {
+  const el = document.getElementById("cart-items");
+  const count = cart.reduce((s,x) => s + x.quantity,0);
+  const total = cart.reduce((s,x) => s + x.price*x.quantity,0);
+
+  document.getElementById("cart-count").textContent = count;
+  document.getElementById("cart-total").textContent = total.toLocaleString("en-IN");
+
+  if (!cart.length) {
+    el.innerHTML = "<p>Your shopping bag is empty.</p>";
+    return;
+  }
+
+  el.innerHTML = cart.map((x,i) => `
+    <div class="cart-item">
+      <div>
+        <strong>${x.name}</strong>
+        <p>Size: ${x.size} | Quantity: ${x.quantity}</p>
+        <p>₹${(x.price*x.quantity).toLocaleString("en-IN")}</p>
       </div>
-
-      <div class="cart-total">
-        Total: ₹<span id="cart-total">0</span>
-      </div>
-
-      <div class="cart-actions">
-        <button class="btn" onclick="clearCart()">
-          Clear Bag
-        </button>
-
-        <button class="btn whatsapp-btn" onclick="orderWhatsApp()">
-          Order on WhatsApp
-        </button>
-      </div>
+      <button class="remove-btn" onclick="removeItem(${i})">Remove</button>
     </div>
-  </section>
+  `).join("");
+}
 
-  <!-- ABOUT BRAND -->
-  <section class="about" id="about">
-    <h2 class="section-title">About SK Elegance</h2>
+function removeItem(i) {
+  cart.splice(i,1);
+  updateCart();
+}
 
-    <p>
-      Welcome to SK Elegance, your destination for elegant
-      women's fashion and beautiful embroidered outfits.
-    </p>
-
-    <p>
-      Our collection features two special dress designs,
-      each priced at ₹1,200.
-    </p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <h3>SK ELEGANCE</h3>
-    <p>Wear Your Style. Own Your Elegance.</p>
-    <p>© 2026 SK Elegance. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // ONLY TWO DRESSES
-    const products = [
-      {
-        id: 1,
-        name: "Elegant Purple Embroidered Dress",
-        category: "Womens Wear",
-        price: 1200,
-        sizes: ["S", "M", "L", "XL", "XXL"],
-        image: "2.jpeg"
-      },
-      {
-        id: 2,
-        name: "Pink Embroidered Dress",
-        category: "Womens Wear",
-        price: 1200,
-        sizes: ["S", "M", "L", "XL", "XXL"],
-        image: "1.jpeg"
-      }
-    ];
-
-    let cart = [];
-
-    // DISPLAY PRODUCTS
-    function displayProducts(category = "All") {
-      const container = document.getElementById("products");
-
-      const filtered = category === "All"
-        ? products
-        : products.filter(p => p.category === category);
-
-      container.innerHTML = filtered.map(product => `
-        <div class="product-card">
-          <img
-            src="${product.image}"
-            alt="${product.name}"
-            onerror="this.onerror=null;this.src='https://placehold.co/500x650/f3e8df/302630?text=SK+Elegance';"
-          >
-
-          <div class="product-info">
-            <span class="category">Women's Wear</span>
-            <h3>${product.name}</h3>
-            <p class="price">₹${product.price.toLocaleString("en-IN")}</p>
-
-            <label for="size-${product.id}">Choose size:</label>
-
-            <select class="sizes" id="size-${product.id}">
-              ${product.sizes.map(size =>
-                `<option value="${size}">${size}</option>`
-              ).join("")}
-            </select>
-
-            <button class="add-btn"
-              onclick="addToCart(${product.id})">
-              Add to Bag
-            </button>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    // FILTER
-    function filterProducts(category, button) {
-      displayProducts(category);
-
-      document.querySelectorAll(".filter-btn").forEach(btn => {
-        btn.classList.remove("active");
-      });
-
-      button.classList.add("active");
-    }
-
-    // ADD TO BAG
-    function addToCart(productId) {
-      const product = products.find(p => p.id === productId);
-      const size = document.getElementById(
-        `size-${productId}`
-      ).value;
-
-      const existing = cart.find(item =>
-        item.id === productId && item.size === size
-      );
-
-      if (existing) {
-        existing.quantity++;
-      } else {
-        cart.push({
-          ...product,
-          size: size,
-          quantity: 1
-        });
-      }
-
-      updateCart();
-      alert(product.name + " added to your bag!");
-    }
-
-    // UPDATE BAG AND TOTAL
-    function updateCart() {
-      const itemsElement = document.getElementById("cart-items");
-
-      const count = cart.reduce(
-        (sum, item) => sum + item.quantity, 0
-      );
-
-      const total = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity, 0
-      );
-
-      document.getElementById("cart-count").textContent = count;
-      document.getElementById("cart-total").textContent =
-        total.toLocaleString("en-IN");
-
-      if (cart.length === 0) {
-        itemsElement.innerHTML = "<p>Your shopping bag is empty.</p>";
-        return;
-      }
-
-      itemsElement.innerHTML = cart.map((item, index) => `
-        <div class="cart-item">
-          <div>
-            <strong>${item.name}</strong>
-            <p>Size: ${item.size}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <p>₹${(item.price * item.quantity).toLocaleString("en-IN")}</p>
-          </div>
-
-          <button class="remove-btn" onclick="removeItem(${index})">
-            Remove
-          </button>
-        </div>
-      `).join("");
-    }
-
-    // REMOVE ITEM
-    function removeItem(index) {
-      cart.splice(index, 1);
-      updateCart();
-    }
-
-    // CLEAR BAG
-    function clearCart() {
-      if (cart.length === 0) {
-        alert("Your shopping bag is already empty.");
-        return;
-      }
-
-      if (confirm("Clear all items from your shopping bag?")) {
-        cart = [];
-        updateCart();
-      }
-    }
-
-    // WHATSAPP ORDER
-    function orderWhatsApp() {
-      if (cart.length === 0) {
-        alert("Please add a dress to your bag first.");
-        return;
-      }
-
-      const details = cart.map(item =>
-        `${item.name}\nSize: ${item.size}\nQuantity: ${item.quantity}\nPrice: ₹${item.price * item.quantity}`
-      ).join("\n\n");
-
-      const total = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity, 0
-      );
-
-      const message =
-        `Hello SK Elegance! I would like to order:\n\n` +
-        `${details}\n\nTotal: ₹${total}`;
-
-      // CHANGE THIS TO YOUR WHATSAPP NUMBER.
-      // Use country code, without + or spaces.
-      const whatsappNumber = "917093001723";
-
-      const url =
-        "https://wa.me/" + whatsappNumber +
-        "?text=" + encodeURIComponent(message);
-
-      window.open(url, "_blank");
-    }
-
-    // INITIALIZE WEBSITE
-    displayProducts();
+function clearCart() {
+  if (!cart.length) {
+    alert("Your bag is already empty.");
+    return;
+  }
+  if (confirm("Clear all items?")) {
+    cart = [];
     updateCart();
-  </script>
+  }
+}
 
+function orderWhatsApp() {
+  if (!cart.length) {
+    alert("Please add a product first.");
+    return;
+  }
+
+  const details = cart.map(x => `${x.name}\nSize: ${x.size}\nQuantity: ${x.quantity}\nPrice: ₹${x.price*x.quantity}`).join("\n\n");
+  const total = cart.reduce((s,x) => s + x.price*x.quantity,0);
+  const message = `Hello SK Elegance! I would like to order:\n\n${details}\n\nTotal: ₹${total}`;
+  const whatsappNumber = "917093001723";
+
+  window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
+}
+
+displayProducts();
+updateCart();
+</script>
 </body>
 </html>
