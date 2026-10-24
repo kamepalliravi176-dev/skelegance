@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Purple XXL dress">
+  <defs>
+    <linearGradient id="bg4" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8f3ff"/>
+      <stop offset="1" stop-color="#efe6ff"/>
+    </linearGradient>
+    <linearGradient id="dress4" x1="0" x2="1">
+      <stop offset="0" stop-color="#643484"/>
+      <stop offset="1" stop-color="#3c1d62"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg4)"/>
+  <circle cx="400" cy="180" r="120" fill="#e7dce9"/>
+  <path d="M270 260 L390 220 L530 260 L550 760 L250 760 Z" fill="url(#dress4)"/>
+  <path d="M300 300 C360 350, 445 350, 500 300" stroke="#e8dfec" stroke-width="10" fill="none"/>
+  <path d="M270 420 C330 460, 500 460, 550 420" stroke="#e8dfec" stroke-width="6" fill="none"/>
+  <g fill="#f8dca9" opacity="0.9">
+    <circle cx="315" cy="345" r="9"/><circle cx="370" cy="390" r="9"/><circle cx="435" cy="390" r="9"/><circle cx="485" cy="345" r="9"/>
+    <circle cx="340" cy="470" r="9"/><circle cx="460" cy="470" r="9"/><circle cx="355" cy="570" r="9"/><circle cx="445" cy="570" r="9"/>
+  </g>
+  <path d="M323 750 L478 750" stroke="#dcd0eb" stroke-width="18" stroke-linecap="round"/>
+</svg>
