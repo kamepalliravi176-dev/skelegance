@@ -1,282 +1,693 @@
-3<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SK Elegance | Official Store</title>
-<style>
-:root {
-  --black:#171714;
-  --cream:#f8f5ef;
-  --gold:#b99a63;
-  --white:#fff;
-}
-* { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:Arial,sans-serif; background:var(--cream); color:var(--black); }
-a { color:inherit; text-decoration:none; }
-button,select { font:inherit; cursor:pointer; }
-.announcement { background:var(--black); color:white; padding:10px; text-align:center; font-size:11px; letter-spacing:2px; }
-header { display:flex; align-items:center; justify-content:space-between; gap:15px; padding:20px 6%; background:var(--cream); position:sticky; top:0; z-index:5; border-bottom:1px solid #e5dfd3; }
-.logo { font-family:Georgia,serif; font-size:25px; font-weight:bold; letter-spacing:1px; }
-.logo span { color:var(--gold); }
-nav { display:flex; gap:20px; font-size:12px; text-transform:uppercase; }
-nav a:hover { color:var(--gold); }
-.bag { border:1px solid var(--black); background:transparent; padding:10px; }
-.hero { min-height:500px; display:flex; align-items:center; padding:8%; color:white; background:linear-gradient(90deg,#171714e8,#17171425),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85') center/cover; }
-.hero-content { max-width:500px; }
-.eyebrow { color:var(--gold); letter-spacing:3px; font-size:11px; text-transform:uppercase; margin-bottom:18px; }
-h1,h2,h3 { font-family:Georgia,serif; font-weight:normal; }
-h1 { font-size:clamp(43px,7vw,72px); line-height:1.08; margin-bottom:20px; }
-.hero p { line-height:1.8; margin-bottom:25px; }
-.btn { display:inline-block; padding:14px 22px; background:var(--gold); color:var(--black); border:0; font-size:11px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; }
-section:not(.hero) { padding:65px 6%; }
-.heading { text-align:center; margin-bottom:30px; }
-.heading h2 { font-size:36px; }
-.filters { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:25px 0; }
-.filter { padding:10px 18px; background:transparent; border:1px solid #ccc; }
-.filter.active { background:var(--black); color:white; }
-.grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
-.product { min-width:0; background:white; padding-bottom:15px; }
-.product img { width:100%; height:260px; object-fit:cover; display:block; }
-.details { padding:14px; }
-.details h3 { font-size:19px; margin-bottom:8px; }
-.details p { color:#777; font-size:12px; margin-bottom:10px; }
-.price { font-weight:bold; margin-bottom:12px; }
-select { width:100%; padding:10px; border:1px solid #ddd; background:white; margin-bottom:10px; }
-.add { width:100%; padding:12px 5px; border:1px solid var(--black); background:white; font-size:11px; text-transform:uppercase; }
-.add:hover { background:var(--black); color:white; }
-#bag-section { background:white; }
-.cart-item { display:flex; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid #ddd; font-size:13px; }
-.remove { border:0; background:transparent; color:#9b3434; }
-.total { text-align:right; padding:20px 0; font-weight:bold; }
-.empty { color:#777; font-size:14px; }
-.story { text-align:center; max-width:650px; margin:auto; line-height:1.8; }
-.story h2 { font-size:34px; margin-bottom:15px; }
-footer { background:var(--black); color:white; text-align:center; padding:35px 15px; }
-footer p { color:#ccc; font-size:12px; line-height:2; }
-footer .logo { display:inline-block; margin-bottom:12px; }
-.note { text-align:center; color:#777; font-size:11px; margin-top:20px; line-height:1.7; }
-@media(max-width:800px) {
-  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .product img { height:220px; }
-  header { flex-wrap:wrap; }
-  nav { order:3; width:100%; justify-content:space-between; gap:8px; }
-  nav a { font-size:10px; }
-}
-@media(max-width:400px) {
-  .product img { height:175px; }
-  .details { padding:10px; }
-  .details h3 { font-size:16px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK Elegance | Fashion Store</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf7;
+      color: #222;
+    }
+
+    header {
+      background: #171717;
+      color: white;
+      padding: 20px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #e7b77b;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #e7b77b;
+    }
+
+    .hero {
+      min-height: 390px;
+      padding: 70px 8%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.08)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85");
+      background-position: center;
+      background-size: cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      background: #d6a56e;
+      color: #171717;
+      padding: 13px 22px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background: #f0c99b;
+    }
+
+    section {
+      padding: 45px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 28px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border: 1px solid #222;
+      background: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #222;
+      color: white;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 7px;
+      overflow: hidden;
+      transition: transform .2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0eeee;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .category-label {
+      color: #9a7047;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .sizes {
+      width: 100%;
+      padding: 9px;
+      margin: 5px 0 12px;
+      border: 1px solid #ddd;
+      background: white;
+    }
+
+    .add-btn {
+      width: 100%;
+      padding: 11px;
+      background: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .add-btn:hover {
+      background: #9a7047;
+    }
+
+    .cart {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 25px;
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #eee;
+      padding: 13px 0;
+    }
+
+    .remove-btn {
+      background: #f3e4d6;
+      border: none;
+      padding: 7px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .cart-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn {
+      background: #168b49;
+      color: white;
+    }
+
+    .about {
+      background: #f4e8dc;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: 12px auto;
+    }
+
+    footer {
+      background: #171717;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #e7b77b;
+    }
+
+    @media (max-width: 1000px) {
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-card img {
+        height: 190px;
+      }
+
+      .product-info {
+        padding: 10px;
+      }
+
+      .product-info h3 {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 35px 4%;
+      }
+
+      .hero {
+        min-height: 340px;
+        padding: 45px 6%;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card img {
+        height: 280px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="announcement">WELCOME TO SK ELEGANCE — DEFINE YOUR STYLE</div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">SK <span>ELEGANCE</span></div>
 
-<header>
-  <a class="logo" href="#home">SK <span>ELEGANCE</span></a>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#about">Our Story</a>
-  </nav>
-  <a class="bag" href="#bag-section">Bag (<span id="count">0</span>)</a>
-</header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#cart">Bag (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">The New Collection</div>
-    <h1>Wear Your<br>Elegance.</h1>
-    <p>Discover a new expression of style. Premium-inspired
-    fashion for men and women, made for your everyday moments.</p>
-    <a class="btn" href="#shop">Explore Collection</a>
-  </div>
-</section>
+  <!-- HOME BANNER -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Style That Defines You</h1>
+      <p>
+        Discover beautiful tops and elegant women's fashion
+        at SK Elegance. Find your style, wear your confidence.
+      </p>
+      <a href="#shop" class="btn">SHOP COLLECTION</a>
+    </div>
+  </section>
 
-<section id="shop">
-  <div class="heading">
-    <div class="eyebrow">SK Signature Collection</div>
-    <h2>Shop Our Collection</h2>
-  </div>
+  <!-- PRODUCTS -->
+  <section id="shop">
+    <h2 class="section-title">Our Collection</h2>
+    <p class="section-subtitle">
+      Explore our latest fashion collection.
+    </p>
 
-  <div class="filters">
-    <button class="filter active" onclick="filter('All',this)">All</button>
-    <button class="filter" onclick="filter('Men',this)">Men</button>
-    <button class="filter" onclick="filter('Women',this)">Women</button>
-  </div>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProducts('All', this)">
+        All Products
+      </button>
 
-  <div class="grid" id="products"></div>
-  <p class="note">Product photos are illustrative. Replace sample products,
-  prices and photos with your actual SK Elegance inventory before selling.</p>
-</section>
+      <button class="filter-btn" onclick="filterProducts('Girls Tops', this)">
+        Girls' Tops
+      </button>
 
-<section id="bag-section">
-  <div class="heading">
-    <div class="eyebrow">Your Selection</div>
-    <h2>Shopping Bag</h2>
-  </div>
-  <div id="cart"><p class="empty">Your bag is empty. Explore our collection.</p></div>
-  <div class="total" id="total">Total: ₹0</div>
-  <button class="btn" onclick="orderWhatsApp()">Order via WhatsApp</button>
-  <p class="note">Your order is an enquiry until you confirm availability,
-  delivery charges, payment and delivery details with the seller.</p>
-</section>
+      <button class="filter-btn" onclick="filterProducts('Womens Wear', this)">
+        Women's Wear
+      </button>
+    </div>
 
-<section id="about">
-  <div class="story">
-    <div class="eyebrow">Our Philosophy</div>
-    <h2>Confidence in Every Outfit.</h2>
-    <p>SK Elegance is an independent clothing brand for men and women.
-    Our vision is to make personal style feel effortless, distinctive
-    and accessible. Every collection begins with your individuality.</p>
-  </div>
-</section>
-</main>
+    <div class="products" id="products"></div>
+  </section>
 
-<footer>
-  <a class="logo" href="#home">SK <span>ELEGANCE</span></a>
-  <p>Wear your confidence. Live your elegance.</p>
-  <p>Men's Fashion · Women's Fashion · Everyday Style</p>
-  <p>© 2026 SK Elegance. All rights reserved.</p>
-</footer>
+  <!-- SHOPPING BAG -->
+  <section id="cart">
+    <h2 class="section-title">Your Shopping Bag</h2>
+    <p class="section-subtitle">Review your selected products.</p>
 
-<script>
-/* Replace sample details with your real products. */
-const products = [
-  {
-    id:1, name:"Classic Black T-Shirt", category:"Men",
-    price:79, sizes:["S","M","L","XL"],
-    image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id:2, name:"Premium Casual Shirt", category:"Men",
-    price:119, sizes:["S","M","L","XL"],
-    image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id:3, name:"Elegant Women's Dress", category:"Women",
-    price:149, sizes:["S","M","L","XL"],
-    image:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id:4, name:"Modern Women's Top", category:"Women",
-    price:89, sizes:["XS","S","M","L"],
-    image:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id:5, name:"Everyday Polo T-Shirt", category:"Men",
-    price:99, sizes:["S","M","L","XL"],
-    image:"https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id:6, name:"Chic Casual Outfit", category:"Women",
-    price:129, sizes:["S","M","L","XL"],
-    image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
-  }
-];
-
-let bag = [];
-
-function renderProducts(category="All") {
-  const list = products.filter(p =>
-    category === "All" || p.category === category
-  );
-
-  document.getElementById("products").innerHTML = list.map(p => `
-    <article class="product">
-      <img src="${p.image}" alt="${p.name}" loading="lazy">
-      <div class="details">
-        <p>${p.category.toUpperCase()} COLLECTION</p>
-        <h3>${p.name}</h3>
-        <div class="price">₹${p.price.toLocaleString("en-IN")}</div>
-        <select id="size-${p.id}" aria-label="Choose size for ${p.name}">
-          <option value="">Choose size</option>
-          ${p.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
-        </select>
-        <button class="add" onclick="addToBag(${p.id})">Add to Bag</button>
+    <div class="cart">
+      <div id="cart-items">
+        <p>Your shopping bag is empty.</p>
       </div>
-    </article>
-  `).join("");
-}
 
-function filter(category, button) {
-  document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
-  button.classList.add("active");
-  renderProducts(category);
-}
+      <div class="cart-total">
+        Total: ₹<span id="cart-total">0</span>
+      </div>
 
-function addToBag(id) {
-  const product = products.find(p => p.id === id);
-  const size = document.getElementById("size-" + id).value;
+      <div class="cart-actions">
+        <button class="btn" onclick="clearCart()">
+          Clear Bag
+        </button>
 
-  if (!size) {
-    alert("Please select a size first.");
-    return;
-  }
+        <button class="btn whatsapp-btn" onclick="orderWhatsApp()">
+          Order on WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
 
-  bag.push({...product, size, lineId:Date.now() + Math.random()});
-  renderBag();
-  alert(product.name + " added to your bag.");
-}
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2 class="section-title">About SK Elegance</h2>
+    <p>
+      SK Elegance is a fashion brand focused on stylish tops
+      and women's wear. Our goal is to bring you fashionable
+      looks at prices you can enjoy.
+    </p>
+    <p>Thank you for choosing SK Elegance!</p>
+  </section>
 
-function removeFromBag(lineId) {
-  bag = bag.filter(item => item.lineId !== lineId);
-  renderBag();
-}
+  <!-- FOOTER -->
+  <footer>
+    <h3>SK ELEGANCE</h3>
+    <p>Wear Your Style. Own Your Elegance.</p>
+    <p>© 2026 SK Elegance. All rights reserved.</p>
+  </footer>
 
-function renderBag() {
-  document.getElementById("count").textContent = bag.length;
+  <script>
+    // 12 PRODUCTS: 6 GIRLS' TOPS + 6 WOMEN'S WEAR
 
-  document.getElementById("cart").innerHTML = bag.length
-    ? bag.map(item => `
-        <div class="cart-item">
-          <span>${item.name} · Size ${item.size}<br>₹${item.price.toLocaleString("en-IN")}</span>
-          <button class="remove" onclick="removeFromBag(${item.lineId})">Remove</button>
+    const products = [
+      // GIRLS' TOPS - 6 PRODUCTS
+      {
+        id: 1,
+        name: "Classic White Top",
+        category: "Girls Tops",
+        price: 399,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 2,
+        name: "Black Casual Top",
+        category: "Girls Tops",
+        price: 449,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1564257577-0a3d1b1a5a9f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 3,
+        name: "Pink Fashion Top",
+        category: "Girls Tops",
+        price: 499,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 4,
+        name: "Floral Summer Top",
+        category: "Girls Tops",
+        price: 549,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 5,
+        name: "Blue Denim Style Top",
+        category: "Girls Tops",
+        price: 599,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1548624149-f0a9c2b8e5c4?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 6,
+        name: "Trendy Beige Top",
+        category: "Girls Tops",
+        price: 449,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80"
+      },
+
+      // WOMEN'S WEAR - 6 PRODUCTS
+      {
+        id: 7,
+        name: "Elegant Women's Dress",
+        category: "Womens Wear",
+        price: 999,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 8,
+        name: "Women's Casual Outfit",
+        category: "Womens Wear",
+        price: 899,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 9,
+        name: "Floral Women's Dress",
+        category: "Womens Wear",
+        price: 1199,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 10,
+        name: "Elegant Party Wear",
+        category: "Womens Wear",
+        price: 1499,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 11,
+        name: "Women's Casual Shirt",
+        category: "Womens Wear",
+        price: 799,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 12,
+        name: "Premium Women's Outfit",
+        category: "Womens Wear",
+        price: 1299,
+        sizes: ["S", "M", "L", "XL"],
+        image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
+
+    let cart = [];
+
+    // DISPLAY PRODUCTS
+    function displayProducts(category = "All") {
+      const container = document.getElementById("products");
+
+      const filteredProducts = category === "All"
+        ? products
+        : products.filter(product => product.category === category);
+
+      container.innerHTML = filteredProducts.map(product => `
+        <div class="product-card">
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://placehold.co/500x600/f4e8dc/333?text=SK+Elegance';"
+          >
+
+          <div class="product-info">
+            <span class="category-label">${product.category}</span>
+            <h3>${product.name}</h3>
+            <p class="price">₹${product.price}</p>
+
+            <label for="size-${product.id}">Choose size:</label>
+
+            <select class="sizes" id="size-${product.id}">
+              ${product.sizes.map(size =>
+                `<option value="${size}">${size}</option>`
+              ).join("")}
+            </select>
+
+            <button class="add-btn" onclick="addToCart(${product.id})">
+              Add to Bag
+            </button>
+          </div>
         </div>
-      `).join("")
-    : '<p class="empty">Your bag is empty. Explore our collection.</p>';
+      `).join("");
+    }
 
-  const total = bag.reduce((sum,item) => sum + item.price, 0);
-  document.getElementById("total").textContent =
-    "Total: ₹" + total.toLocaleString("en-IN");
-}
+    // FILTER PRODUCTS
+    function filterProducts(category, button) {
+      displayProducts(category);
 
-function orderWhatsApp() {
-  if (!bag.length) {
-    alert("Add at least one product to your bag first.");
-    return;
-  }
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
 
-  /* IMPORTANT: Replace with your WhatsApp number.
-     Include country code 91, without +, spaces or dashes. */
-  const phone = "917093001723";
+      button.classList.add("active");
+    }
 
-  if (!/^91\d{10}$/.test(phone)) {
-    alert(".");
-    return;
-  }
+    // ADD PRODUCT TO BAG
+    function addToCart(productId) {
+      const product = products.find(item => item.id === productId);
+      const size = document.getElementById(`size-${productId}`).value;
 
-  const items = bag.map(item =>
-    "- " + item.name + " | Size: " + item.size +
-    " | ₹" + item.price
-  ).join("\n");
+      const existingItem = cart.find(item =>
+        item.id === productId && item.size === size
+      );
 
-  const total = bag.reduce((sum,item) => sum + item.price, 0);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          ...product,
+          size: size,
+          quantity: 1
+        });
+      }
 
-  const message =
-    "Hello SK Elegance! I would like to enquire about this order:\n\n" +
-    items + "\n\nEstimated product total: ₹" + total +
-    "\nPlease confirm stock, delivery charges and payment options.";
+      updateCart();
+      alert(product.name + " added to your shopping bag!");
+    }
 
-  window.open(
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
-    "_blank"
-  );
-}
+    // UPDATE BAG
+    function updateCart() {
+      const cartItems = document.getElementById("cart-items");
+      const cartCount = document.getElementById("cart-count");
+      const cartTotal = document.getElementById("cart-total");
 
-renderProducts();
-</script>
+      const totalQuantity = cart.reduce(
+        (sum, item) => sum + item.quantity, 0
+      );
+
+      const totalPrice = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity, 0
+      );
+
+      cartCount.textContent = totalQuantity;
+      cartTotal.textContent = totalPrice;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your shopping bag is empty.</p>";
+        return;
+      }
+
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <div>
+            <strong>${item.name}</strong>
+            <p>Size: ${item.size} | Quantity: ${item.quantity}</p>
+            <p>₹${item.price * item.quantity}</p>
+          </div>
+
+          <button class="remove-btn" onclick="removeItem(${index})">
+            Remove
+          </button>
+        </div>
+      `).join("");
+    }
+
+    // REMOVE ONE BAG ITEM
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    // CLEAR BAG
+    function clearCart() {
+      if (cart.length === 0) {
+        alert("Your shopping bag is already empty.");
+        return;
+      }
+
+      if (confirm("Do you want to clear your shopping bag?")) {
+        cart = [];
+        updateCart();
+      }
+    }
+
+    // WHATSAPP ORDER
+    function orderWhatsApp() {
+      if (cart.length === 0) {
+        alert("Please add products to your bag first.");
+        return;
+      }
+
+      const orderDetails = cart.map(item =>
+        `${item.name} | Size: ${item.size} | Qty: ${item.quantity} | ₹${item.price * item.quantity}`
+      ).join("\n");
+
+      const totalPrice = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity, 0
+      );
+
+      const message =
+        `Hello SK Elegance! I want to place an order:\n\n` +
+        `${orderDetails}\n\nTotal: ₹${totalPrice}`;
+
+      // REPLACE THIS NUMBER WITH YOUR OWN WHATSAPP NUMBER.
+      // Include country code, without + or spaces.
+      const whatsappNumber = "917093001723";
+
+      const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(whatsappURL, "_blank");
+    }
+
+    // LOAD PRODUCTS WHEN PAGE OPENS
+    displayProducts();
+    updateCart();
+  </script>
+
 </body>
 </html>
